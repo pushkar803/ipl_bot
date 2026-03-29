@@ -1,0 +1,1886 @@
+curl 'https://api.spoda.ai/match-team-analysis/team?matchId=95838&teamOneId=593&teamTwoId=591' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: en-US,en;q=0.9,hi;q=0.8' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -b 'auth-cookie=j%3A%7B%22access_token%22%3A%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMGY1ZjJjLWUzZTEtNGI3NS05MDVlLWJkZTQ5ODc1ZWIxYyIsImVtYWlsIjoicHVzaGthcnNoZXR5ZTgwM0BnbWFpbC5jb20iLCJmdWxsTmFtZSI6IlB1c2hrYXIgU2hldHllIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3NzQ3ODM2MTYsImV4cCI6MTc3NzM3NTYxNn0.QKR6NCZ0P12thiUEOfqAVW-qZCPhoz2gi-W9KEw8j4I%22%2C%22refresh_token%22%3A%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMGY1ZjJjLWUzZTEtNGI3NS05MDVlLWJkZTQ5ODc1ZWIxYyIsImVtYWlsIjoicHVzaGthcnNoZXR5ZTgwM0BnbWFpbC5jb20iLCJmdWxsTmFtZSI6IlB1c2hrYXIgU2hldHllIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3NzQ3ODM2MTYsImV4cCI6MTc3NzM3NTYxNn0.IQYW-osIsP93MIyo78T1wD4baxDR9TlfxuFvwHislsY%22%7D; auth-role=User' \
+  -H 'Origin: https://www.spoda.ai' \
+  -H 'Pragma: no-cache' \
+  -H 'Referer: https://www.spoda.ai/' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-site' \
+  -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36' \
+  -H 'sec-ch-ua: "Chromium";v="146", "Not-A.Brand";v="24", "Google Chrome";v="146"' \
+  -H 'sec-ch-ua-mobile: ?1' \
+  -H 'sec-ch-ua-platform: "Android"'
+
+
+  {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "tabType": {
+        "type": "string"
+      },
+      "widgetName": {
+        "type": "string"
+      },
+      "widgets": {
+        "type": "object",
+        "properties": {
+          "widget_type": {
+            "type": "string"
+          },
+          "Last_5_matches": {
+            "type": "object",
+            "properties": {
+              "deathOver": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "match": {
+                            "type": "number"
+                          },
+                          "Kolkata Knight Riders": {
+                            "type": "number"
+                          },
+                          "Mumbai Indians": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "match",
+                          "Kolkata Knight Riders",
+                          "Mumbai Indians"
+                        ]
+                      }
+                    },
+                    "xAxis": {
+                      "type": "string"
+                    },
+                    "yAxis": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "xAxis",
+                    "yAxis"
+                  ]
+                }
+              },
+              "middleOver": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "match": {
+                            "type": "number"
+                          },
+                          "Kolkata Knight Riders": {
+                            "type": "number"
+                          },
+                          "Mumbai Indians": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "match",
+                          "Kolkata Knight Riders",
+                          "Mumbai Indians"
+                        ]
+                      }
+                    },
+                    "xAxis": {
+                      "type": "string"
+                    },
+                    "yAxis": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "xAxis",
+                    "yAxis"
+                  ]
+                }
+              },
+              "powerPlay": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "match": {
+                            "type": "number"
+                          },
+                          "Kolkata Knight Riders": {
+                            "type": "number"
+                          },
+                          "Mumbai Indians": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "match",
+                          "Kolkata Knight Riders",
+                          "Mumbai Indians"
+                        ]
+                      }
+                    },
+                    "xAxis": {
+                      "type": "string"
+                    },
+                    "yAxis": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "xAxis",
+                    "yAxis"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "deathOver",
+              "middleOver",
+              "powerPlay"
+            ]
+          },
+          "Last_10_matches": {
+            "type": "object",
+            "properties": {
+              "deathOver": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "match": {
+                            "type": "number"
+                          },
+                          "Kolkata Knight Riders": {
+                            "type": "number"
+                          },
+                          "Mumbai Indians": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "match",
+                          "Kolkata Knight Riders",
+                          "Mumbai Indians"
+                        ]
+                      }
+                    },
+                    "xAxis": {
+                      "type": "string"
+                    },
+                    "yAxis": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "xAxis",
+                    "yAxis"
+                  ]
+                }
+              },
+              "middleOver": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "match": {
+                            "type": "number"
+                          },
+                          "Kolkata Knight Riders": {
+                            "type": "number"
+                          },
+                          "Mumbai Indians": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "match",
+                          "Kolkata Knight Riders",
+                          "Mumbai Indians"
+                        ]
+                      }
+                    },
+                    "xAxis": {
+                      "type": "string"
+                    },
+                    "yAxis": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "xAxis",
+                    "yAxis"
+                  ]
+                }
+              },
+              "powerPlay": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "match": {
+                            "type": "number"
+                          },
+                          "Kolkata Knight Riders": {
+                            "type": "number"
+                          },
+                          "Mumbai Indians": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "match",
+                          "Kolkata Knight Riders",
+                          "Mumbai Indians"
+                        ]
+                      }
+                    },
+                    "xAxis": {
+                      "type": "string"
+                    },
+                    "yAxis": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "xAxis",
+                    "yAxis"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "deathOver",
+              "middleOver",
+              "powerPlay"
+            ]
+          },
+          "Last_20_matches": {
+            "type": "object",
+            "properties": {
+              "deathOver": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "match": {
+                            "type": "number"
+                          },
+                          "Kolkata Knight Riders": {
+                            "type": "number"
+                          },
+                          "Mumbai Indians": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "match",
+                          "Kolkata Knight Riders",
+                          "Mumbai Indians"
+                        ]
+                      }
+                    },
+                    "xAxis": {
+                      "type": "string"
+                    },
+                    "yAxis": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "xAxis",
+                    "yAxis"
+                  ]
+                }
+              },
+              "middleOver": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "match": {
+                            "type": "number"
+                          },
+                          "Kolkata Knight Riders": {
+                            "type": "number"
+                          },
+                          "Mumbai Indians": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "match",
+                          "Kolkata Knight Riders",
+                          "Mumbai Indians"
+                        ]
+                      }
+                    },
+                    "xAxis": {
+                      "type": "string"
+                    },
+                    "yAxis": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "xAxis",
+                    "yAxis"
+                  ]
+                }
+              },
+              "powerPlay": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "match": {
+                            "type": "number"
+                          },
+                          "Kolkata Knight Riders": {
+                            "type": "number"
+                          },
+                          "Mumbai Indians": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "match",
+                          "Kolkata Knight Riders",
+                          "Mumbai Indians"
+                        ]
+                      }
+                    },
+                    "xAxis": {
+                      "type": "string"
+                    },
+                    "yAxis": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "xAxis",
+                    "yAxis"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "deathOver",
+              "middleOver",
+              "powerPlay"
+            ]
+          },
+          "Batting": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "match": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "match"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "title",
+                "data"
+              ]
+            }
+          },
+          "Bowling": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "match": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "match"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "title",
+                "data"
+              ]
+            }
+          }
+        },
+        "required": [
+          "widget_type"
+        ]
+      }
+    },
+    "required": [
+      "tabType",
+      "widgetName",
+      "widgets"
+    ]
+  }
+}
+
+[
+    {
+        "tabType": "team",
+        "widgetName": "team_average_run_scored",
+        "widgets": {
+            "widget_type": "line",
+            "Last_5_matches": {
+                "deathOver": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 17,
+                                "Mumbai Indians": 47
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 41,
+                                "Mumbai Indians": 53
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 70,
+                                "Mumbai Indians": 40
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 36,
+                                "Mumbai Indians": 62
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 40,
+                                "Mumbai Indians": 32
+                            }
+                        ],
+                        "xAxis": "Last 5 matches (Latest on the left)",
+                        "yAxis": "Runs"
+                    }
+                ],
+                "middleOver": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 89,
+                                "Mumbai Indians": 86
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 69,
+                                "Mumbai Indians": 93
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 69,
+                                "Mumbai Indians": 89
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 77,
+                                "Mumbai Indians": 55
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 69,
+                                "Mumbai Indians": 57
+                            }
+                        ],
+                        "xAxis": "Last 5 matches (Latest on the left)",
+                        "yAxis": "Runs"
+                    }
+                ],
+                "powerPlay": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 62,
+                                "Mumbai Indians": 70
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 69,
+                                "Mumbai Indians": 82
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 67,
+                                "Mumbai Indians": 55
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 91,
+                                "Mumbai Indians": 63
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 50,
+                                "Mumbai Indians": 66
+                            }
+                        ],
+                        "xAxis": "Last 5 matches (Latest on the left)",
+                        "yAxis": "Runs"
+                    }
+                ]
+            },
+            "Last_10_matches": {
+                "deathOver": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 17,
+                                "Mumbai Indians": 47
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 41,
+                                "Mumbai Indians": 53
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 70,
+                                "Mumbai Indians": 40
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 36,
+                                "Mumbai Indians": 62
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 40,
+                                "Mumbai Indians": 32
+                            },
+                            {
+                                "match": 6,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 56
+                            },
+                            {
+                                "match": 7,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 53
+                            },
+                            {
+                                "match": 8,
+                                "Kolkata Knight Riders": 49,
+                                "Mumbai Indians": 0
+                            },
+                            {
+                                "match": 9,
+                                "Kolkata Knight Riders": 66,
+                                "Mumbai Indians": 0
+                            },
+                            {
+                                "match": 10,
+                                "Kolkata Knight Riders": 6,
+                                "Mumbai Indians": 20
+                            }
+                        ],
+                        "xAxis": "Last 10 matches (Latest on the left)",
+                        "yAxis": "Runs"
+                    }
+                ],
+                "middleOver": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 89,
+                                "Mumbai Indians": 86
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 69,
+                                "Mumbai Indians": 93
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 69,
+                                "Mumbai Indians": 89
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 77,
+                                "Mumbai Indians": 55
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 69,
+                                "Mumbai Indians": 57
+                            },
+                            {
+                                "match": 6,
+                                "Kolkata Knight Riders": 35,
+                                "Mumbai Indians": 97
+                            },
+                            {
+                                "match": 7,
+                                "Kolkata Knight Riders": 22,
+                                "Mumbai Indians": 89
+                            },
+                            {
+                                "match": 8,
+                                "Kolkata Knight Riders": 89,
+                                "Mumbai Indians": 86
+                            },
+                            {
+                                "match": 9,
+                                "Kolkata Knight Riders": 73,
+                                "Mumbai Indians": 112
+                            },
+                            {
+                                "match": 10,
+                                "Kolkata Knight Riders": 65,
+                                "Mumbai Indians": 87
+                            }
+                        ],
+                        "xAxis": "Last 10 matches (Latest on the left)",
+                        "yAxis": "Runs"
+                    }
+                ],
+                "powerPlay": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 62,
+                                "Mumbai Indians": 70
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 69,
+                                "Mumbai Indians": 82
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 67,
+                                "Mumbai Indians": 55
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 91,
+                                "Mumbai Indians": 63
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 50,
+                                "Mumbai Indians": 66
+                            },
+                            {
+                                "match": 6,
+                                "Kolkata Knight Riders": 60,
+                                "Mumbai Indians": 64
+                            },
+                            {
+                                "match": 7,
+                                "Kolkata Knight Riders": 85,
+                                "Mumbai Indians": 73
+                            },
+                            {
+                                "match": 8,
+                                "Kolkata Knight Riders": 96,
+                                "Mumbai Indians": 60
+                            },
+                            {
+                                "match": 9,
+                                "Kolkata Knight Riders": 61,
+                                "Mumbai Indians": 65
+                            },
+                            {
+                                "match": 10,
+                                "Kolkata Knight Riders": 45,
+                                "Mumbai Indians": 59
+                            }
+                        ],
+                        "xAxis": "Last 10 matches (Latest on the left)",
+                        "yAxis": "Runs"
+                    }
+                ]
+            },
+            "Last_20_matches": {
+                "deathOver": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 17,
+                                "Mumbai Indians": 47
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 41,
+                                "Mumbai Indians": 53
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 70,
+                                "Mumbai Indians": 40
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 36,
+                                "Mumbai Indians": 62
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 40,
+                                "Mumbai Indians": 32
+                            },
+                            {
+                                "match": 6,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 56
+                            },
+                            {
+                                "match": 7,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 53
+                            },
+                            {
+                                "match": 8,
+                                "Kolkata Knight Riders": 49,
+                                "Mumbai Indians": 0
+                            },
+                            {
+                                "match": 9,
+                                "Kolkata Knight Riders": 66,
+                                "Mumbai Indians": 0
+                            },
+                            {
+                                "match": 10,
+                                "Kolkata Knight Riders": 6,
+                                "Mumbai Indians": 20
+                            },
+                            {
+                                "match": 11,
+                                "Kolkata Knight Riders": 28,
+                                "Mumbai Indians": 51
+                            },
+                            {
+                                "match": 12,
+                                "Kolkata Knight Riders": 23,
+                                "Mumbai Indians": 39
+                            },
+                            {
+                                "match": 13,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 39
+                            },
+                            {
+                                "match": 14,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 0
+                            },
+                            {
+                                "match": 15,
+                                "Kolkata Knight Riders": 10,
+                                "Mumbai Indians": 40
+                            },
+                            {
+                                "match": 16,
+                                "Kolkata Knight Riders": 64,
+                                "Mumbai Indians": 37
+                            },
+                            {
+                                "match": 17,
+                                "Kolkata Knight Riders": 41,
+                                "Mumbai Indians": 71
+                            },
+                            {
+                                "match": 18,
+                                "Kolkata Knight Riders": 16,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 19,
+                                "Kolkata Knight Riders": 71,
+                                "Mumbai Indians": 35
+                            },
+                            {
+                                "match": 20,
+                                "Kolkata Knight Riders": 73,
+                                "Mumbai Indians": 26
+                            }
+                        ],
+                        "xAxis": "Last 20 matches (Latest on the left)",
+                        "yAxis": "Runs"
+                    }
+                ],
+                "middleOver": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 89,
+                                "Mumbai Indians": 86
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 69,
+                                "Mumbai Indians": 93
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 69,
+                                "Mumbai Indians": 89
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 77,
+                                "Mumbai Indians": 55
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 69,
+                                "Mumbai Indians": 57
+                            },
+                            {
+                                "match": 6,
+                                "Kolkata Knight Riders": 35,
+                                "Mumbai Indians": 97
+                            },
+                            {
+                                "match": 7,
+                                "Kolkata Knight Riders": 22,
+                                "Mumbai Indians": 89
+                            },
+                            {
+                                "match": 8,
+                                "Kolkata Knight Riders": 89,
+                                "Mumbai Indians": 86
+                            },
+                            {
+                                "match": 9,
+                                "Kolkata Knight Riders": 73,
+                                "Mumbai Indians": 112
+                            },
+                            {
+                                "match": 10,
+                                "Kolkata Knight Riders": 65,
+                                "Mumbai Indians": 87
+                            },
+                            {
+                                "match": 11,
+                                "Kolkata Knight Riders": 81,
+                                "Mumbai Indians": 81
+                            },
+                            {
+                                "match": 12,
+                                "Kolkata Knight Riders": 86,
+                                "Mumbai Indians": 111
+                            },
+                            {
+                                "match": 13,
+                                "Kolkata Knight Riders": 42,
+                                "Mumbai Indians": 77
+                            },
+                            {
+                                "match": 14,
+                                "Kolkata Knight Riders": 101,
+                                "Mumbai Indians": 59
+                            },
+                            {
+                                "match": 15,
+                                "Kolkata Knight Riders": 95,
+                                "Mumbai Indians": 66
+                            },
+                            {
+                                "match": 16,
+                                "Kolkata Knight Riders": 101,
+                                "Mumbai Indians": 59
+                            },
+                            {
+                                "match": 17,
+                                "Kolkata Knight Riders": 71,
+                                "Mumbai Indians": 72
+                            },
+                            {
+                                "match": 18,
+                                "Kolkata Knight Riders": 62,
+                                "Mumbai Indians": 74
+                            },
+                            {
+                                "match": 19,
+                                "Kolkata Knight Riders": 114,
+                                "Mumbai Indians": 87
+                            },
+                            {
+                                "match": 20,
+                                "Kolkata Knight Riders": 74,
+                                "Mumbai Indians": 73
+                            }
+                        ],
+                        "xAxis": "Last 20 matches (Latest on the left)",
+                        "yAxis": "Runs"
+                    }
+                ],
+                "powerPlay": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 62,
+                                "Mumbai Indians": 70
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 69,
+                                "Mumbai Indians": 82
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 67,
+                                "Mumbai Indians": 55
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 91,
+                                "Mumbai Indians": 63
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 50,
+                                "Mumbai Indians": 66
+                            },
+                            {
+                                "match": 6,
+                                "Kolkata Knight Riders": 60,
+                                "Mumbai Indians": 64
+                            },
+                            {
+                                "match": 7,
+                                "Kolkata Knight Riders": 85,
+                                "Mumbai Indians": 73
+                            },
+                            {
+                                "match": 8,
+                                "Kolkata Knight Riders": 96,
+                                "Mumbai Indians": 60
+                            },
+                            {
+                                "match": 9,
+                                "Kolkata Knight Riders": 61,
+                                "Mumbai Indians": 65
+                            },
+                            {
+                                "match": 10,
+                                "Kolkata Knight Riders": 45,
+                                "Mumbai Indians": 59
+                            },
+                            {
+                                "match": 11,
+                                "Kolkata Knight Riders": 44,
+                                "Mumbai Indians": 73
+                            },
+                            {
+                                "match": 12,
+                                "Kolkata Knight Riders": 65,
+                                "Mumbai Indians": 59
+                            },
+                            {
+                                "match": 13,
+                                "Kolkata Knight Riders": 72,
+                                "Mumbai Indians": 75
+                            },
+                            {
+                                "match": 14,
+                                "Kolkata Knight Riders": 63,
+                                "Mumbai Indians": 62
+                            },
+                            {
+                                "match": 15,
+                                "Kolkata Knight Riders": 52,
+                                "Mumbai Indians": 54
+                            },
+                            {
+                                "match": 16,
+                                "Kolkata Knight Riders": 70,
+                                "Mumbai Indians": 59
+                            },
+                            {
+                                "match": 17,
+                                "Kolkata Knight Riders": 57,
+                                "Mumbai Indians": 53
+                            },
+                            {
+                                "match": 18,
+                                "Kolkata Knight Riders": 79,
+                                "Mumbai Indians": 62
+                            },
+                            {
+                                "match": 19,
+                                "Kolkata Knight Riders": 76,
+                                "Mumbai Indians": 52
+                            },
+                            {
+                                "match": 20,
+                                "Kolkata Knight Riders": 75,
+                                "Mumbai Indians": 46
+                            }
+                        ],
+                        "xAxis": "Last 20 matches (Latest on the left)",
+                        "yAxis": "Runs"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "tabType": "team",
+        "widgetName": "team_wickets_taken",
+        "widgets": {
+            "widget_type": "line",
+            "Last_5_matches": {
+                "deathOver": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 3
+                            }
+                        ],
+                        "xAxis": "Last 5 matches (Latest on the left)",
+                        "yAxis": "Wickets"
+                    }
+                ],
+                "middleOver": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 5
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 3
+                            }
+                        ],
+                        "xAxis": "Last 5 matches (Latest on the left)",
+                        "yAxis": "Wickets"
+                    }
+                ],
+                "powerPlay": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 5,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 1
+                            }
+                        ],
+                        "xAxis": "Last 5 matches (Latest on the left)",
+                        "yAxis": "Wickets"
+                    }
+                ]
+            },
+            "Last_10_matches": {
+                "deathOver": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 6,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 7,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 8,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 9,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 10,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 2
+                            }
+                        ],
+                        "xAxis": "Last 10 matches (Latest on the left)",
+                        "yAxis": "Wickets"
+                    }
+                ],
+                "middleOver": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 5
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 6,
+                                "Kolkata Knight Riders": 6,
+                                "Mumbai Indians": 4
+                            },
+                            {
+                                "match": 7,
+                                "Kolkata Knight Riders": 6,
+                                "Mumbai Indians": 5
+                            },
+                            {
+                                "match": 8,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 9,
+                                "Kolkata Knight Riders": 5,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 10,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 3
+                            }
+                        ],
+                        "xAxis": "Last 10 matches (Latest on the left)",
+                        "yAxis": "Wickets"
+                    }
+                ],
+                "powerPlay": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 5,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 6,
+                                "Kolkata Knight Riders": 4,
+                                "Mumbai Indians": 5
+                            },
+                            {
+                                "match": 7,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 8,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 4
+                            },
+                            {
+                                "match": 9,
+                                "Kolkata Knight Riders": 4,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 10,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 0
+                            }
+                        ],
+                        "xAxis": "Last 10 matches (Latest on the left)",
+                        "yAxis": "Wickets"
+                    }
+                ]
+            },
+            "Last_20_matches": {
+                "deathOver": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 6,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 7,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 8,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 9,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 10,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 11,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 4
+                            },
+                            {
+                                "match": 12,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 13,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 4
+                            },
+                            {
+                                "match": 14,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 15,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 5
+                            },
+                            {
+                                "match": 16,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 17,
+                                "Kolkata Knight Riders": 4,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 18,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 19,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 20,
+                                "Kolkata Knight Riders": 4,
+                                "Mumbai Indians": 5
+                            }
+                        ],
+                        "xAxis": "Last 20 matches (Latest on the left)",
+                        "yAxis": "Wickets"
+                    }
+                ],
+                "middleOver": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 5
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 6,
+                                "Kolkata Knight Riders": 6,
+                                "Mumbai Indians": 4
+                            },
+                            {
+                                "match": 7,
+                                "Kolkata Knight Riders": 6,
+                                "Mumbai Indians": 5
+                            },
+                            {
+                                "match": 8,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 9,
+                                "Kolkata Knight Riders": 5,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 10,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 11,
+                                "Kolkata Knight Riders": 5,
+                                "Mumbai Indians": 5
+                            },
+                            {
+                                "match": 12,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 13,
+                                "Kolkata Knight Riders": 5,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 14,
+                                "Kolkata Knight Riders": 4,
+                                "Mumbai Indians": 4
+                            },
+                            {
+                                "match": 15,
+                                "Kolkata Knight Riders": 6,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 16,
+                                "Kolkata Knight Riders": 7,
+                                "Mumbai Indians": 4
+                            },
+                            {
+                                "match": 17,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 18,
+                                "Kolkata Knight Riders": 5,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 19,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 4
+                            },
+                            {
+                                "match": 20,
+                                "Kolkata Knight Riders": 4,
+                                "Mumbai Indians": 1
+                            }
+                        ],
+                        "xAxis": "Last 20 matches (Latest on the left)",
+                        "yAxis": "Wickets"
+                    }
+                ],
+                "powerPlay": [
+                    {
+                        "data": [
+                            {
+                                "match": 1,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 2,
+                                "Kolkata Knight Riders": 5,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 3,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 4,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 5,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 6,
+                                "Kolkata Knight Riders": 4,
+                                "Mumbai Indians": 5
+                            },
+                            {
+                                "match": 7,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 8,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 4
+                            },
+                            {
+                                "match": 9,
+                                "Kolkata Knight Riders": 4,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 10,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 0
+                            },
+                            {
+                                "match": 11,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 12,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 13,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 14,
+                                "Kolkata Knight Riders": 4,
+                                "Mumbai Indians": 5
+                            },
+                            {
+                                "match": 15,
+                                "Kolkata Knight Riders": 0,
+                                "Mumbai Indians": 0
+                            },
+                            {
+                                "match": 16,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 17,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 2
+                            },
+                            {
+                                "match": 18,
+                                "Kolkata Knight Riders": 3,
+                                "Mumbai Indians": 3
+                            },
+                            {
+                                "match": 19,
+                                "Kolkata Knight Riders": 1,
+                                "Mumbai Indians": 1
+                            },
+                            {
+                                "match": 20,
+                                "Kolkata Knight Riders": 2,
+                                "Mumbai Indians": 4
+                            }
+                        ],
+                        "xAxis": "Last 20 matches (Latest on the left)",
+                        "yAxis": "Wickets"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "tabType": "team",
+        "widgetName": "team_runs_in_ground",
+        "widgets": {
+            "widget_type": "horizontal-bar",
+            "Batting": [
+                {
+                    "title": "Kolkata Knight Riders",
+                    "data": [
+                        {
+                            "match": "Average First Innings"
+                        },
+                        {
+                            "match": "Kolkata Knight Riders First Innings",
+                            "value": 165
+                        },
+                        {
+                            "match": "Average Second Innings"
+                        },
+                        {
+                            "match": "Kolkata Knight Riders Second Innings",
+                            "value": 150
+                        }
+                    ]
+                },
+                {
+                    "title": "Mumbai Indians",
+                    "data": [
+                        {
+                            "match": "Average First Innings"
+                        },
+                        {
+                            "match": "Mumbai Indians First Innings",
+                            "value": 168
+                        },
+                        {
+                            "match": "Average Second Innings"
+                        },
+                        {
+                            "match": "Mumbai Indians Second Innings",
+                            "value": 156
+                        }
+                    ]
+                }
+            ],
+            "Bowling": [
+                {
+                    "title": "Kolkata Knight Riders",
+                    "data": [
+                        {
+                            "match": "Average First Innings"
+                        },
+                        {
+                            "match": "Kolkata Knight Riders First Innings",
+                            "value": 162
+                        },
+                        {
+                            "match": "Average Second Innings"
+                        },
+                        {
+                            "match": "Kolkata Knight Riders Second Innings",
+                            "value": 150
+                        }
+                    ]
+                },
+                {
+                    "title": "Mumbai Indians",
+                    "data": [
+                        {
+                            "match": "Average First Innings"
+                        },
+                        {
+                            "match": "Mumbai Indians First Innings",
+                            "value": 167
+                        },
+                        {
+                            "match": "Average Second Innings"
+                        },
+                        {
+                            "match": "Mumbai Indians Second Innings",
+                            "value": 151
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "tabType": "team",
+        "widgetName": "team_boundaries_percentage",
+        "widgets": {
+            "widget_type": "horizontal-bar",
+            "Batting": [
+                {
+                    "title": "Kolkata Knight Riders",
+                    "data": [
+                        {
+                            "match": "Kolkata Knight Riders 4’s",
+                            "value": 35
+                        },
+                        {
+                            "match": "Kolkata Knight Riders 6’s",
+                            "value": 22
+                        }
+                    ]
+                },
+                {
+                    "title": "Mumbai Indians",
+                    "data": [
+                        {
+                            "match": "Mumbai Indians 4’s",
+                            "value": 34
+                        },
+                        {
+                            "match": "Mumbai Indians 6’s",
+                            "value": 23
+                        }
+                    ]
+                }
+            ],
+            "Bowling": [
+                {
+                    "title": "Kolkata Knight Riders",
+                    "data": [
+                        {
+                            "match": "Kolkata Knight Riders 4’s",
+                            "value": 34
+                        },
+                        {
+                            "match": "Kolkata Knight Riders 6’s",
+                            "value": 21
+                        }
+                    ]
+                },
+                {
+                    "title": "Mumbai Indians",
+                    "data": [
+                        {
+                            "match": "Mumbai Indians 4’s",
+                            "value": 34
+                        },
+                        {
+                            "match": "Mumbai Indians 6’s",
+                            "value": 21
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Cricket Predictor{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+  <style>
+    .prob-bar { transition: width 1s ease-in-out; }
+    .fade-in { animation: fadeIn .4s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .team-badge { display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 9999px; font-weight: 700; font-size: .875rem; flex-shrink: 0; }
+    .team-badge-lg { width: 4.5rem; height: 4.5rem; font-size: 1.25rem; }
+    .stat-highlight { background: linear-gradient(135deg, oklch(var(--b2)) 0%, oklch(var(--b3)) 100%); }
+
+    /* AI analysis prose styling */
+    .ai-prose p { margin-bottom: .5rem; }
+    .ai-prose p:last-child { margin-bottom: 0; }
+    .ai-prose strong { color: oklch(var(--bc)); font-weight: 700; }
+    .ai-prose ul { list-style: none; padding: 0; margin: .5rem 0; display: flex; flex-direction: column; gap: .4rem; }
+    .ai-prose ul li { position: relative; padding-left: 1.4rem; }
+    .ai-prose ul li::before { content: '▸'; position: absolute; left: 0; color: oklch(var(--s)); font-weight: 700; }
+    .ai-prose ol { padding-left: 1.5rem; margin: .5rem 0; }
+    .ai-prose ol li { margin-bottom: .25rem; }
+  </style>
+</head>
+<body class="min-h-screen bg-base-100">
+
+  <!-- Navbar -->
+  <div class="navbar bg-base-200 shadow-lg sticky top-0 z-50">
+    <div class="navbar-start">
+      <a href="/" class="btn btn-ghost text-xl gap-2">
+        <span class="text-2xl">🏏</span>
+        <span class="font-bold">Cricket Predictor</span>
+      </a>
+    </div>
+    <div class="navbar-end">
+      {% block nav_extra %}{% endblock %}
+    </div>
+  </div>
+
+  <!-- Content -->
+  <main class="container mx-auto px-4 py-8 max-w-7xl">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer footer-center p-6 bg-base-200 text-base-content mt-12">
+    <p class="opacity-60">Powered by Spoda AI &bull; Data refreshed every 6 hours</p>
+  </footer>
+
+</body>
+</html>

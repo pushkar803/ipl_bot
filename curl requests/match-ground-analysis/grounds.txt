@@ -1,0 +1,2091 @@
+curl 'https://api.spoda.ai/match-ground-analysis/grounds/?matchId=95838&teams=593,591' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: en-US,en;q=0.9,hi;q=0.8' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -b 'auth-cookie=j%3A%7B%22access_token%22%3A%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMGY1ZjJjLWUzZTEtNGI3NS05MDVlLWJkZTQ5ODc1ZWIxYyIsImVtYWlsIjoicHVzaGthcnNoZXR5ZTgwM0BnbWFpbC5jb20iLCJmdWxsTmFtZSI6IlB1c2hrYXIgU2hldHllIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3NzQ3ODM2MTYsImV4cCI6MTc3NzM3NTYxNn0.QKR6NCZ0P12thiUEOfqAVW-qZCPhoz2gi-W9KEw8j4I%22%2C%22refresh_token%22%3A%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMGY1ZjJjLWUzZTEtNGI3NS05MDVlLWJkZTQ5ODc1ZWIxYyIsImVtYWlsIjoicHVzaGthcnNoZXR5ZTgwM0BnbWFpbC5jb20iLCJmdWxsTmFtZSI6IlB1c2hrYXIgU2hldHllIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3NzQ3ODM2MTYsImV4cCI6MTc3NzM3NTYxNn0.IQYW-osIsP93MIyo78T1wD4baxDR9TlfxuFvwHislsY%22%7D; auth-role=User' \
+  -H 'Origin: https://www.spoda.ai' \
+  -H 'Pragma: no-cache' \
+  -H 'Referer: https://www.spoda.ai/' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-site' \
+  -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36' \
+  -H 'sec-ch-ua: "Chromium";v="146", "Not-A.Brand";v="24", "Google Chrome";v="146"' \
+  -H 'sec-ch-ua-mobile: ?1' \
+  -H 'sec-ch-ua-platform: "Android"'
+
+
+  {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "number"
+    },
+    "message": {
+      "type": "string"
+    },
+    "grounds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "groundId": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "longName": {
+            "type": "string"
+          },
+          "dataAvailable": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "groundId",
+          "name",
+          "longName",
+          "dataAvailable"
+        ]
+      }
+    }
+  },
+  "required": [
+    "code",
+    "message",
+    "grounds"
+  ]
+}
+
+{
+    "code": 200,
+    "message": "Success",
+    "grounds": [
+        {
+            "groundId": 7,
+            "name": "Sophia Gardens",
+            "longName": "Sophia Gardens",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 9,
+            "name": "The Rose Bowl",
+            "longName": "The Rose Bowl",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 39,
+            "name": "Riverside Ground, Chester-le-Street",
+            "longName": "Riverside Ground, Chester-le-Street",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 41,
+            "name": "Merchant Taylors' School Ground",
+            "longName": "Merchant Taylors' School Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 45,
+            "name": "County Ground, Chelmsford",
+            "longName": "County Ground, Chelmsford",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 46,
+            "name": "County Ground",
+            "longName": "County Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 48,
+            "name": "Grace Road",
+            "longName": "Grace Road",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 232,
+            "name": "Queen's Park",
+            "longName": "Queen's Park",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 342,
+            "name": "York Cricket Club",
+            "longName": "York Cricket Club",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213480,
+            "name": "Grand Prairie Stadium",
+            "longName": "Grand Prairie Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213703,
+            "name": "Oakland Coliseum",
+            "longName": "Oakland Coliseum",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 37,
+            "name": "The Village, Malahide",
+            "longName": "The Village, Malahide",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 87,
+            "name": "Civil Service Cricket Club, Stormont",
+            "longName": "Civil Service Cricket Club, Stormont",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 97,
+            "name": "Bready Cricket Club, Magheramason",
+            "longName": "Bready Cricket Club, Magheramason",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 91,
+            "name": "NPR College Ground",
+            "longName": "NPR College Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 92,
+            "name": "Indian Cement Company Ground",
+            "longName": "Indian Cement Company Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213284,
+            "name": "SCF Cricket Ground",
+            "longName": "SCF Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213373,
+            "name": "SNR College Cricket Ground",
+            "longName": "SNR College Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 416,
+            "name": "P Sara Oval, Colombo",
+            "longName": "P Sara Oval, Colombo",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 15,
+            "name": "Central Broward Regional Park Stadium Turf Ground",
+            "longName": "Central Broward Regional Park Stadium Turf Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 834,
+            "name": "Myreside, Edinburgh",
+            "longName": "Myreside, Edinburgh",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1367,
+            "name": "Senwes Park, Potchefstroom",
+            "longName": "Senwes Park, Potchefstroom",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1844,
+            "name": "Khan Shaheb Osman Ali Stadium, Fatullah",
+            "longName": "Khan Shaheb Osman Ali Stadium, Fatullah",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 2177,
+            "name": "Tony Ireland Stadium, Townsville",
+            "longName": "Tony Ireland Stadium, Townsville",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 2546,
+            "name": "New Williamfield No1 Oval, Stirling",
+            "longName": "New Williamfield No1 Oval, Stirling",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 2837,
+            "name": "Sheikh Zayed Stadium Nursery 2, Abu Dhabi",
+            "longName": "Sheikh Zayed Stadium Nursery 2, Abu Dhabi",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 3,
+            "name": "Kennington Oval",
+            "longName": "Kennington Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 5,
+            "name": "Headingley",
+            "longName": "Headingley",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 6,
+            "name": "Trent Bridge ",
+            "longName": "Trent Bridge ",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 30,
+            "name": "Lord's",
+            "longName": "Lord's",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 31,
+            "name": "Old Trafford",
+            "longName": "Old Trafford",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 32,
+            "name": "Edgbaston",
+            "longName": "Edgbaston",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 38,
+            "name": "County Ground, Bristol",
+            "longName": "County Ground, Bristol",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 40,
+            "name": "The Cooper Associates County Ground, Taunton",
+            "longName": "The Cooper Associates County Ground, Taunton",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 47,
+            "name": "County Ground, Hove",
+            "longName": "County Ground, Hove",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 3707,
+            "name": "Namibia Cricket Ground, Windhoek",
+            "longName": "Namibia Cricket Ground, Windhoek",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 49,
+            "name": "County Ground",
+            "longName": "County Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 50,
+            "name": "St Lawrence Ground",
+            "longName": "St Lawrence Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 60,
+            "name": "College Ground",
+            "longName": "College Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1622,
+            "name": "York Cricket Club",
+            "longName": "York Cricket Club",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8852527,
+            "name": "John Walker's Ground, Southgate",
+            "longName": "John Walker's Ground, Southgate",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 57154,
+            "name": "Mote Park, Maidstone",
+            "longName": "Mote Park, Maidstone",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 43,
+            "name": "North Marine Road Ground, Scarborough",
+            "longName": "North Marine Road Ground, Scarborough",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8,
+            "name": "Aigburth, Liverpool",
+            "longName": "Aigburth, Liverpool",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213368,
+            "name": "Grace Road, Leicester",
+            "longName": "Grace Road, Leicester",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 360,
+            "name": "Svanholm Park, Brondby",
+            "longName": "Svanholm Park, Brondby",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 83,
+            "name": "Queen's Park Oval, Port of Spain, Trinidad",
+            "longName": "Queen's Park Oval, Port of Spain, Trinidad",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 438,
+            "name": "Recreation Ground, Bath",
+            "longName": "Recreation Ground, Bath",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 188,
+            "name": "Gymkhana Club Ground, Nairobi",
+            "longName": "Gymkhana Club Ground, Nairobi",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 107,
+            "name": "Western Australia Cricket Association Ground, Perth",
+            "longName": "Western Australia Cricket Association Ground, Perth",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 57,
+            "name": "Queen's Park, Chesterfield",
+            "longName": "Queen's Park, Chesterfield",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 59,
+            "name": "Nevill Ground, Tunbridge Wells",
+            "longName": "Nevill Ground, Tunbridge Wells",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 70,
+            "name": "Stanley Park, Blackpool",
+            "longName": "Stanley Park, Blackpool",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 86,
+            "name": "Grange Cricket Club Ground, Raeburn Place, Edinburgh",
+            "longName": "Grange Cricket Club Ground, Raeburn Place, Edinburgh",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213456,
+            "name": "Hurlingham Club Ground, Buenos Aires",
+            "longName": "Hurlingham Club Ground, Buenos Aires",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 53,
+            "name": "St Helen's, Swansea",
+            "longName": "St Helen's, Swansea",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 68,
+            "name": "Castle Park Cricket Ground, Colchester",
+            "longName": "Castle Park Cricket Ground, Colchester",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 343,
+            "name": "Chester Road North Ground, Kidderminster",
+            "longName": "Chester Road North Ground, Kidderminster",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213683,
+            "name": "Belgrano Athletic Club Ground, Buenos Aires",
+            "longName": "Belgrano Athletic Club Ground, Buenos Aires",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 17,
+            "name": "Wankhede Stadium",
+            "longName": "Wankhede Stadium",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 18,
+            "name": "Eden Gardens",
+            "longName": "Eden Gardens",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 13,
+            "name": "Harare Sports Club",
+            "longName": "Harare Sports Club",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 36,
+            "name": "Kensington Oval, Bridgetown",
+            "longName": "Kensington Oval, Bridgetown",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 84,
+            "name": "Sabina Park, Kingston",
+            "longName": "Sabina Park, Kingston",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 89,
+            "name": "Queens Sports Club",
+            "longName": "Queens Sports Club",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 118,
+            "name": "Hagley Oval",
+            "longName": "Hagley Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 165,
+            "name": "Eden Park",
+            "longName": "Eden Park",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 105,
+            "name": "Adelaide Oval",
+            "longName": "Adelaide Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 108,
+            "name": "Sydney Cricket Ground",
+            "longName": "Sydney Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 110,
+            "name": "The Gabba",
+            "longName": "The Gabba",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 174,
+            "name": "Perth Stadium",
+            "longName": "Perth Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 33,
+            "name": "Kingsmead",
+            "longName": "Kingsmead",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 62,
+            "name": "St George's Park",
+            "longName": "St George's Park",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 63,
+            "name": "Newlands",
+            "longName": "Newlands",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 65,
+            "name": "Willowmoore Park",
+            "longName": "Willowmoore Park",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 139,
+            "name": "Brabourne Stadium, Mumbai",
+            "longName": "Brabourne Stadium, Mumbai",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 220,
+            "name": "Junction Oval, Melbourne",
+            "longName": "Junction Oval, Melbourne",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 26,
+            "name": "Green Park, Kanpur",
+            "longName": "Green Park, Kanpur",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 122,
+            "name": "Basin Reserve",
+            "longName": "Basin Reserve",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 124,
+            "name": "Barabati Stadium",
+            "longName": "Barabati Stadium",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 231,
+            "name": "Fitzherbert Park",
+            "longName": "Fitzherbert Park",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 126,
+            "name": "Pukekura Park, New Plymouth",
+            "longName": "Pukekura Park, New Plymouth",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 280,
+            "name": "Bulawayo Athletic Club",
+            "longName": "Bulawayo Athletic Club",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 55,
+            "name": "Kent County Cricket Ground, Beckenham",
+            "longName": "Kent County Cricket Ground, Beckenham",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213375,
+            "name": "Lugogo Cricket Oval, Kampala",
+            "longName": "Lugogo Cricket Oval, Kampala",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 173,
+            "name": "Windsor Park, Roseau, Dominica",
+            "longName": "Windsor Park, Roseau, Dominica",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 367,
+            "name": "National Stadium, Hamilton",
+            "longName": "National Stadium, Hamilton",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 263,
+            "name": "Arnos Vale Ground, Kingstown, St Vincent",
+            "longName": "Arnos Vale Ground, Kingstown, St Vincent",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 4,
+            "name": "County Ground, New Road",
+            "longName": "County Ground, New Road",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 172,
+            "name": "Castle Avenue",
+            "longName": "Castle Avenue",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 51,
+            "name": "MA Chidambaram Stadium",
+            "longName": "MA Chidambaram Stadium",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 1213364,
+            "name": "Woodvale Road, Eglinton",
+            "longName": "Woodvale Road, Eglinton",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 54,
+            "name": "Uxbridge Cricket Club Ground",
+            "longName": "Uxbridge Cricket Club Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 478,
+            "name": "Whitestone Contracting Stadium, Oamaru",
+            "longName": "Whitestone Contracting Stadium, Oamaru",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8949251,
+            "name": "Wardown Park, Luton",
+            "longName": "Wardown Park, Luton",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 270,
+            "name": "Lavington Sports Oval, Albury",
+            "longName": "Lavington Sports Oval, Albury",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 198,
+            "name": "North Sydney Oval, Sydney",
+            "longName": "North Sydney Oval, Sydney",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 56,
+            "name": "Arundel Castle Cricket Club Ground",
+            "longName": "Arundel Castle Cricket Club Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213260,
+            "name": "Malahide, Dublin",
+            "longName": "Malahide, Dublin",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8425372,
+            "name": "Archdeacon Meadow, Gloucester",
+            "longName": "Archdeacon Meadow, Gloucester",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 19,
+            "name": "Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh",
+            "longName": "Punjab Cricket Association IS Bindra Stadium, Mohali, Chandigarh",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 333,
+            "name": "Nehru Stadium, Kochi",
+            "longName": "Nehru Stadium, Kochi",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213646,
+            "name": "Ruaraka Sports Club Ground, Nairobi",
+            "longName": "Ruaraka Sports Club Ground, Nairobi",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213678,
+            "name": "Aorangi Oval, Timaru",
+            "longName": "Aorangi Oval, Timaru",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 182,
+            "name": "VRA Ground, Amstelveen",
+            "longName": "VRA Ground, Amstelveen",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 290,
+            "name": "Sportpark Het Schootsveld, Deventer",
+            "longName": "Sportpark Het Schootsveld, Deventer",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 293,
+            "name": "Sportpark Maarschalkerweerd, Utrecht",
+            "longName": "Sportpark Maarschalkerweerd, Utrecht",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 230,
+            "name": "Colin Maiden Park, Auckland",
+            "longName": "Colin Maiden Park, Auckland",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213591,
+            "name": "Village Green, Christchurch",
+            "longName": "Village Green, Christchurch",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 451,
+            "name": "Brunton Memorial Ground, Radlett",
+            "longName": "Brunton Memorial Ground, Radlett",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213677,
+            "name": "Blake Park, Mount Maunganui",
+            "longName": "Blake Park, Mount Maunganui",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 58,
+            "name": "Old Deer Park, Richmond",
+            "longName": "Old Deer Park, Richmond",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8019866,
+            "name": "Campbell Park, Milton Keynes",
+            "longName": "Campbell Park, Milton Keynes",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8458801,
+            "name": "Whitgift School, Croydon",
+            "longName": "Whitgift School, Croydon",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8650122,
+            "name": "Highfield, Leek",
+            "longName": "Highfield, Leek",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 224,
+            "name": "Traeger Park, Alice Springs",
+            "longName": "Traeger Park, Alice Springs",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 309,
+            "name": "Geelong Cricket Ground",
+            "longName": "Geelong Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213355,
+            "name": "Merrion Cricket Club Ground, Dublin",
+            "longName": "Merrion Cricket Club Ground, Dublin",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 455,
+            "name": "Mardyke",
+            "longName": "Mardyke",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 20,
+            "name": "M.Chinnaswamy Stadium",
+            "longName": "M.Chinnaswamy Stadium",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 116,
+            "name": "Holkar Cricket Stadium",
+            "longName": "Holkar Cricket Stadium",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 80,
+            "name": "R.Premadasa Stadium, Khettarama",
+            "longName": "R.Premadasa Stadium, Khettarama",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 137,
+            "name": "Sawai Mansingh Stadium",
+            "longName": "Sawai Mansingh Stadium",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 332,
+            "name": "Narendra Modi Stadium",
+            "longName": "Narendra Modi Stadium",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 98,
+            "name": "Sharjah Cricket Stadium",
+            "longName": "Sharjah Cricket Stadium",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 164,
+            "name": "Gaddafi Stadium",
+            "longName": "Gaddafi Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 16,
+            "name": "Warner Park, St Kitts",
+            "longName": "Warner Park, St Kitts",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 262,
+            "name": "National Cricket Stadium",
+            "longName": "National Cricket Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 219,
+            "name": "Cazaly's Stadium",
+            "longName": "Cazaly's Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 123,
+            "name": "Seddon Park",
+            "longName": "Seddon Park",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 171,
+            "name": "Sky Stadium",
+            "longName": "Sky Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 109,
+            "name": "Bellerive Oval",
+            "longName": "Bellerive Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 117,
+            "name": "Manuka Oval",
+            "longName": "Manuka Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 93,
+            "name": "Rawalpindi Cricket Stadium",
+            "longName": "Rawalpindi Cricket Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 306,
+            "name": "MA Aziz Stadium ",
+            "longName": "MA Aziz Stadium ",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 34,
+            "name": "SuperSport Park, Centurion",
+            "longName": "SuperSport Park, Centurion",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 64,
+            "name": "The Wanderers Stadium",
+            "longName": "The Wanderers Stadium",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 76,
+            "name": "Boland Park",
+            "longName": "Boland Park",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 77,
+            "name": "Mangaung Oval",
+            "longName": "Mangaung Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 79,
+            "name": "Buffalo Park",
+            "longName": "Buffalo Park",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 78,
+            "name": "Diamond Oval",
+            "longName": "Diamond Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 127,
+            "name": "Yarrow Stadium, New Plymouth",
+            "longName": "Yarrow Stadium, New Plymouth",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 294,
+            "name": "Maple Leaf North-West Ground, King City",
+            "longName": "Maple Leaf North-West Ground, King City",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 228,
+            "name": "John Davies Oval, Queenstown",
+            "longName": "John Davies Oval, Queenstown",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 246,
+            "name": "Coolidge Cricket Ground, Antigua",
+            "longName": "Coolidge Cricket Ground, Antigua",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213378,
+            "name": "Kyambogo Cricket Oval, Kampala",
+            "longName": "Kyambogo Cricket Oval, Kampala",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 283,
+            "name": "United Cricket Club Ground, Windhoek",
+            "longName": "United Cricket Club Ground, Windhoek",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213246,
+            "name": "Seebarn Cricket Centre, Lower Austria",
+            "longName": "Seebarn Cricket Centre, Lower Austria",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8563853,
+            "name": "Jinja Cricket Ground",
+            "longName": "Jinja Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 454,
+            "name": "The Green, Comber",
+            "longName": "The Green, Comber",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 120,
+            "name": "McLean Park",
+            "longName": "McLean Park",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 106,
+            "name": "Docklands Stadium",
+            "longName": "Docklands Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 163,
+            "name": "Simonds Stadium, South Geelong",
+            "longName": "Simonds Stadium, South Geelong",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 125,
+            "name": "Eden Park Outer Oval",
+            "longName": "Eden Park Outer Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 129,
+            "name": "Molyneux Park",
+            "longName": "Molyneux Park",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 94,
+            "name": "Multan Cricket Stadium",
+            "longName": "Multan Cricket Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 243,
+            "name": "National Stadium Karachi",
+            "longName": "National Stadium Karachi",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8517513,
+            "name": "Carrickfergus Cricket Club Ground",
+            "longName": "Carrickfergus Cricket Club Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8374797,
+            "name": "Shaw's Bridge Upper Ground, Belfast",
+            "longName": "Shaw's Bridge Upper Ground, Belfast",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 463,
+            "name": "Instonians Cricket Club, Shaw's Bridge Lower Ground, Belfast",
+            "longName": "Instonians Cricket Club, Shaw's Bridge Lower Ground, Belfast",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213510,
+            "name": "Stadium Australia, Sydney",
+            "longName": "Stadium Australia, Sydney",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 477,
+            "name": "Marsa Sports Club",
+            "longName": "Marsa Sports Club",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 114,
+            "name": "Sheikh Abu Naser Stadium, Khulna",
+            "longName": "Sheikh Abu Naser Stadium, Khulna",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 113,
+            "name": "Zahur Ahmed Chowdhury Stadium, Chattogram",
+            "longName": "Zahur Ahmed Chowdhury Stadium, Chattogram",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 181,
+            "name": "Hazelaarweg, Rotterdam",
+            "longName": "Hazelaarweg, Rotterdam",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 187,
+            "name": "Tribhuvan University International Cricket Ground, Kirtipur",
+            "longName": "Tribhuvan University International Cricket Ground, Kirtipur",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8497515,
+            "name": "Smith Road Oval, Cayman Islands",
+            "longName": "Smith Road Oval, Cayman Islands",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 373,
+            "name": "Selangor Turf Club, Kuala Lumpur",
+            "longName": "Selangor Turf Club, Kuala Lumpur",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 456,
+            "name": "The Inch, Dublin",
+            "longName": "The Inch, Dublin",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213682,
+            "name": "St Albans Club, Buenos Aires",
+            "longName": "St Albans Club, Buenos Aires",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 288,
+            "name": "Kinrara Academy Oval, Kuala Lumpur",
+            "longName": "Kinrara Academy Oval, Kuala Lumpur",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213490,
+            "name": "University of Dar-es-Salaam Ground",
+            "longName": "University of Dar-es-Salaam Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213419,
+            "name": "Annadil Burhani Ground, Dar-es-Salaam",
+            "longName": "Annadil Burhani Ground, Dar-es-Salaam",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 69,
+            "name": "Radlett Cricket Club, Radlett",
+            "longName": "Radlett Cricket Club, Radlett",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8932765,
+            "name": "Himley Cricket Club Ground",
+            "longName": "Himley Cricket Club Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213486,
+            "name": "Farmers Cricket Club Ground, St Martin",
+            "longName": "Farmers Cricket Club Ground, St Martin",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213296,
+            "name": "Church of Ireland Young Men's Society Cricket Club Ground, Belfast",
+            "longName": "Church of Ireland Young Men's Society Cricket Club Ground, Belfast",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 300,
+            "name": "Bayuemas Oval, Kuala Lumpur",
+            "longName": "Bayuemas Oval, Kuala Lumpur",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213574,
+            "name": "Rugby School Ground",
+            "longName": "Rugby School Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 229,
+            "name": "Mainpower Oval, Rangiora",
+            "longName": "Mainpower Oval, Rangiora",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 334,
+            "name": "Dr DY Patil Sports Academy, Mumbai",
+            "longName": "Dr DY Patil Sports Academy, Mumbai",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 1213289,
+            "name": "Oak Hill Cricket Club",
+            "longName": "Oak Hill Cricket Club",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 354,
+            "name": "College Field, St Peter Port",
+            "longName": "College Field, St Peter Port",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213644,
+            "name": "Gymkhana Club Ground, Dar-es-Salaam",
+            "longName": "Gymkhana Club Ground, Dar-es-Salaam",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213681,
+            "name": "St George's College Ground, Buenos Aires",
+            "longName": "St George's College Ground, Buenos Aires",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 347,
+            "name": "Royal Brussels Cricket Club Ground, Waterloo",
+            "longName": "Royal Brussels Cricket Club Ground, Waterloo",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 362,
+            "name": "Indian Association Ground, Singapore",
+            "longName": "Indian Association Ground, Singapore",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 203,
+            "name": "Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa, Hambantota",
+            "longName": "Mahinda Rajapaksa International Cricket Stadium, Sooriyawewa, Hambantota",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 233,
+            "name": "Cobham Oval (New), Whangarei",
+            "longName": "Cobham Oval (New), Whangarei",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8937667,
+            "name": "Reforma Athletic Club, Naucalpan",
+            "longName": "Reforma Athletic Club, Naucalpan",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213487,
+            "name": "King William's College, Castletown",
+            "longName": "King William's College, Castletown",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 185,
+            "name": "ICC Academy, Dubai",
+            "longName": "ICC Academy, Dubai",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 353,
+            "name": "King George V Sports Ground",
+            "longName": "King George V Sports Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213579,
+            "name": "JImmy Powell Oval",
+            "longName": "JImmy Powell Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 23,
+            "name": "Rajiv Gandhi International Stadium, Uppal",
+            "longName": "Rajiv Gandhi International Stadium, Uppal",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 25,
+            "name": "Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium",
+            "longName": "Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 82,
+            "name": "Pallekele International Cricket Stadium",
+            "longName": "Pallekele International Cricket Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 35,
+            "name": "Providence Stadium",
+            "longName": "Providence Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 29,
+            "name": "Himachal Pradesh Cricket Association Stadium",
+            "longName": "Himachal Pradesh Cricket Association Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 12,
+            "name": "Shere Bangla National Stadium, Mirpur",
+            "longName": "Shere Bangla National Stadium, Mirpur",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 204,
+            "name": "Brian Lara Stadium",
+            "longName": "Brian Lara Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 85,
+            "name": "Daren Sammy National Cricket Stadium, St Lucia",
+            "longName": "Daren Sammy National Cricket Stadium, St Lucia",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 88,
+            "name": "Sir Vivian Richards Stadium",
+            "longName": "Sir Vivian Richards Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 112,
+            "name": "Sylhet International Cricket Stadium",
+            "longName": "Sylhet International Cricket Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 99,
+            "name": "Sheikh Zayed Stadium",
+            "longName": "Sheikh Zayed Stadium",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 100,
+            "name": "Dubai International Cricket Stadium",
+            "longName": "Dubai International Cricket Stadium",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 121,
+            "name": "Bay Oval",
+            "longName": "Bay Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 180,
+            "name": "Wanderers Cricket Ground",
+            "longName": "Wanderers Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 331,
+            "name": "Terdthai Cricket Ground, Bangkok",
+            "longName": "Terdthai Cricket Ground, Bangkok",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 186,
+            "name": "Mission Road Ground, Mong Kok, Hong Kong",
+            "longName": "Mission Road Ground, Mong Kok, Hong Kong",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 200,
+            "name": "ICC Academy Ground No 2, Dubai",
+            "longName": "ICC Academy Ground No 2, Dubai",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213548,
+            "name": "Achimota Senior Secondary School A Field, Accra",
+            "longName": "Achimota Senior Secondary School A Field, Accra",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213549,
+            "name": "Achimota Senior Secondary School B Field, Accra",
+            "longName": "Achimota Senior Secondary School B Field, Accra",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213295,
+            "name": "La Manga Club Top Ground",
+            "longName": "La Manga Club Top Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 170,
+            "name": "Amini Park, Port Moresby",
+            "longName": "Amini Park, Port Moresby",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8890599,
+            "name": "New Strabane Park",
+            "longName": "New Strabane Park",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 24,
+            "name": "Maharashtra Cricket Association Stadium, Pune",
+            "longName": "Maharashtra Cricket Association Stadium, Pune",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 8590137,
+            "name": "Faleata Oval No 1, Apia",
+            "longName": "Faleata Oval No 1, Apia",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213309,
+            "name": "Marina Ground, Corfu",
+            "longName": "Marina Ground, Corfu",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 387,
+            "name": "La Manga Club Bottom Ground",
+            "longName": "La Manga Club Bottom Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8985820,
+            "name": "Faleata Oval No 2, Apia",
+            "longName": "Faleata Oval No 2, Apia",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8674106,
+            "name": "Faleata Oval No 3, Apia",
+            "longName": "Faleata Oval No 3, Apia",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 304,
+            "name": "Sheikh Zayed Stadium Nursery 1, Abu Dhabi",
+            "longName": "Sheikh Zayed Stadium Nursery 1, Abu Dhabi",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 28,
+            "name": "Vidarbha Cricket Association Stadium, Jamtha",
+            "longName": "Vidarbha Cricket Association Stadium, Jamtha",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213645,
+            "name": "Yeonhui Cricket Ground, Incheon",
+            "longName": "Yeonhui Cricket Ground, Incheon",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 223,
+            "name": "Aurora Stadium, Launceston",
+            "longName": "Aurora Stadium, Launceston",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213477,
+            "name": "Goldenacre, Edinburgh",
+            "longName": "Goldenacre, Edinburgh",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 90,
+            "name": "Greater Noida Sports Complex Ground, Greater Noida",
+            "longName": "Greater Noida Sports Complex Ground, Greater Noida",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1313354,
+            "name": "Sano International Cricket Ground",
+            "longName": "Sano International Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213461,
+            "name": "Tafawa Balewa Square Cricket Oval, Lagos",
+            "longName": "Tafawa Balewa Square Cricket Oval, Lagos",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 299,
+            "name": "UKM-YSD Cricket Oval, Bangi",
+            "longName": "UKM-YSD Cricket Oval, Bangi",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 285,
+            "name": "Rajiv Gandhi International Cricket Stadium, Dehradun",
+            "longName": "Rajiv Gandhi International Cricket Stadium, Dehradun",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 484,
+            "name": "Mulpani Cricket Ground",
+            "longName": "Mulpani Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1151242,
+            "name": "Gahanga International Cricket Stadium, Rwanda",
+            "longName": "Gahanga International Cricket Stadium, Rwanda",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 338,
+            "name": "Albert Park 1, Suva",
+            "longName": "Albert Park 1, Suva",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 337,
+            "name": "Albert Park 2, Suva",
+            "longName": "Albert Park 2, Suva",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213404,
+            "name": "Church Street Park, Morrisville",
+            "longName": "Church Street Park, Morrisville",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 310,
+            "name": "Ted Summerton Reserve, Moe",
+            "longName": "Ted Summerton Reserve, Moe",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213422,
+            "name": "Udayana Cricket Ground",
+            "longName": "Udayana Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 365,
+            "name": "Kerava National Cricket Ground",
+            "longName": "Kerava National Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 366,
+            "name": "White Hill Field, Sandys Parish",
+            "longName": "White Hill Field, Sandys Parish",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213283,
+            "name": "Moara Vlasiei Cricket Ground, Ilfov County",
+            "longName": "Moara Vlasiei Cricket Ground, Ilfov County",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8117742,
+            "name": "El Cortijo Polo Club Pitch A Ground, Lima",
+            "longName": "El Cortijo Polo Club Pitch A Ground, Lima",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8819949,
+            "name": "El Cortijo Polo Club Pitch B Ground, Lima",
+            "longName": "El Cortijo Polo Club Pitch B Ground, Lima",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8639016,
+            "name": "Lima Cricket and Football Club",
+            "longName": "Lima Cricket and Football Club",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8914114,
+            "name": "Lilongwe Golf Club, Lilongwe",
+            "longName": "Lilongwe Golf Club, Lilongwe",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8311278,
+            "name": "Saint Andrews International High School, Blantyre",
+            "longName": "Saint Andrews International High School, Blantyre",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8023326,
+            "name": "Indian Sports Club, Blantyre",
+            "longName": "Indian Sports Club, Blantyre",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 413,
+            "name": "Desert Springs Cricket Ground, Almeria",
+            "longName": "Desert Springs Cricket Ground, Almeria",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8881083,
+            "name": "Los Reyes Polo Club",
+            "longName": "Los Reyes Polo Club",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 457,
+            "name": "Pierre Werner Cricket Ground",
+            "longName": "Pierre Werner Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213393,
+            "name": "Scott Page Field, Vinor",
+            "longName": "Scott Page Field, Vinor",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 458,
+            "name": "National Sports Academy, Sofia",
+            "longName": "National Sports Academy, Sofia",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213292,
+            "name": "Gucherre Cricket Ground",
+            "longName": "Gucherre Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213324,
+            "name": "Integrated Polytechnic Regional Centre",
+            "longName": "Integrated Polytechnic Regional Centre",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213567,
+            "name": "Happy Valley Ground",
+            "longName": "Happy Valley Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8415279,
+            "name": "University of Lagos Cricket Oval",
+            "longName": "University of Lagos Cricket Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213357,
+            "name": "Dreux Sport Cricket Club",
+            "longName": "Dreux Sport Cricket Club",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213370,
+            "name": "Prairie View Cricket Complex",
+            "longName": "Prairie View Cricket Complex",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8274151,
+            "name": "Meersen, Gent",
+            "longName": "Meersen, Gent",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213392,
+            "name": "Tikkurila Cricket Ground",
+            "longName": "Tikkurila Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213396,
+            "name": "Lisicji Jarak Cricket Ground",
+            "longName": "Lisicji Jarak Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8620170,
+            "name": "Malkerns Country Club oval",
+            "longName": "Malkerns Country Club oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213409,
+            "name": "Vanuatu Cricket Ground",
+            "longName": "Vanuatu Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213438,
+            "name": "Sikh Union Club Ground, Nairobi",
+            "longName": "Sikh Union Club Ground, Nairobi",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213340,
+            "name": "Europa Sports Complex",
+            "longName": "Europa Sports Complex",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 142,
+            "name": "Barsapara Cricket Stadium",
+            "longName": "Barsapara Cricket Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213297,
+            "name": "Entebbe Cricket Oval",
+            "longName": "Entebbe Cricket Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 2,
+            "name": "Kabul International Cricket Stadium",
+            "longName": "Kabul International Cricket Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 327,
+            "name": "Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1)",
+            "longName": "Al Amerat Cricket Ground Oman Cricket (Ministry Turf 1)",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 355,
+            "name": "Al Amerat Cricket Ground Oman Cricket (Ministry Turf 2)",
+            "longName": "Al Amerat Cricket Ground Oman Cricket (Ministry Turf 2)",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8748524,
+            "name": "Solvangs Park, Glostrup",
+            "longName": "Solvangs Park, Glostrup",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213466,
+            "name": "AZ Group Cricket Oval",
+            "longName": "AZ Group Cricket Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213475,
+            "name": "Zhejiang University of Technology Cricket Field",
+            "longName": "Zhejiang University of Technology Cricket Field",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213277,
+            "name": "GB Oval, Szodliget",
+            "longName": "GB Oval, Szodliget",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213560,
+            "name": "Nassau County International Cricket Stadium, New York",
+            "longName": "Nassau County International Cricket Stadium, New York",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213546,
+            "name": "University of Doha for Science and Technology",
+            "longName": "University of Doha for Science and Technology",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213513,
+            "name": "Mladost Cricket Ground, Zagreb",
+            "longName": "Mladost Cricket Ground, Zagreb",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213564,
+            "name": "Shrimant Madhavrao Scindia Cricket Stadium, Gwalior",
+            "longName": "Shrimant Madhavrao Scindia Cricket Stadium, Gwalior",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 8854547,
+            "name": "Mannofield Park, Aberdeen",
+            "longName": "Mannofield Park, Aberdeen",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 190,
+            "name": "Sportpark Westvliet",
+            "longName": "Sportpark Westvliet",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213578,
+            "name": "Guernsey Rovers Athletic Club Ground",
+            "longName": "Guernsey Rovers Athletic Club Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213259,
+            "name": "Bayer Uerdingen Cricket Ground",
+            "longName": "Bayer Uerdingen Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213572,
+            "name": "GelsenTrabPark",
+            "longName": "GelsenTrabPark",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 473,
+            "name": "Roma Cricket Ground",
+            "longName": "Roma Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213565,
+            "name": "Simar Cricket Ground",
+            "longName": "Simar Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 286,
+            "name": "Pembroke Cricket Club, Sandymount",
+            "longName": "Pembroke Cricket Club, Sandymount",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 21,
+            "name": "Niranjan Shah Stadium, Khandheri",
+            "longName": "Niranjan Shah Stadium, Khandheri",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 131,
+            "name": "Dr PVG Raju ACA Sports Complex",
+            "longName": "Dr PVG Raju ACA Sports Complex",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 148,
+            "name": "KSCA Stadium",
+            "longName": "KSCA Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 149,
+            "name": "Bandra Kurla Complex",
+            "longName": "Bandra Kurla Complex",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 175,
+            "name": "Gymkhana Ground",
+            "longName": "Gymkhana Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 210,
+            "name": "Emerald High School Ground",
+            "longName": "Emerald High School Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 490,
+            "name": "Kholvad Gymkhana Ground, Kamrej",
+            "longName": "Kholvad Gymkhana Ground, Kamrej",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 104,
+            "name": "Sydney Showground Stadium",
+            "longName": "Sydney Showground Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 208,
+            "name": "Greenfield International Stadium",
+            "longName": "Greenfield International Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213333,
+            "name": "Saurashtra Cricket Association Stadium C",
+            "longName": "Saurashtra Cricket Association Stadium C",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 1213451,
+            "name": "Sharad Pawar Indoor Cricket Academy",
+            "longName": "Sharad Pawar Indoor Cricket Academy",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 81,
+            "name": "Rangiri Dambulla International Stadium",
+            "longName": "Rangiri Dambulla International Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 95,
+            "name": "Galle International Stadium",
+            "longName": "Galle International Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 96,
+            "name": "Sinhalese Sports Club Ground",
+            "longName": "Sinhalese Sports Club Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 22,
+            "name": "Arun Jaitley Stadium",
+            "longName": "Arun Jaitley Stadium",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 162,
+            "name": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium",
+            "longName": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 1213332,
+            "name": "Maharaja Yadavindra Singh International Cricket Stadium",
+            "longName": "Maharaja Yadavindra Singh International Cricket Stadium",
+            "dataAvailable": 1
+        },
+        {
+            "groundId": 1213617,
+            "name": "Singapore Cricket Club",
+            "longName": "Singapore Cricket Club",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213377,
+            "name": "Gahanga International Cricket Stadium",
+            "longName": "Gahanga International Cricket Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 275,
+            "name": "Great Barrier Reef Arena",
+            "longName": "Great Barrier Reef Arena",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213479,
+            "name": "Marrara Cricket Ground (MCG 2)",
+            "longName": "Marrara Cricket Ground (MCG 2)",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213632,
+            "name": "Queen's Park (Old)",
+            "longName": "Queen's Park (Old)",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 412,
+            "name": "Takashinga Sports Club",
+            "longName": "Takashinga Sports Club",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213310,
+            "name": "Sylhet International Cricket Stadium, Academy Ground",
+            "longName": "Sylhet International Cricket Stadium, Academy Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 72,
+            "name": "Shaheed Chandu Stadium",
+            "longName": "Shaheed Chandu Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 73,
+            "name": "Shahid Kamruzzaman Stadium",
+            "longName": "Shahid Kamruzzaman Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213700,
+            "name": "Namibia Cricket Ground",
+            "longName": "Namibia Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 111,
+            "name": "Melbourne Cricket Ground",
+            "longName": "Melbourne Cricket Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213413,
+            "name": "Bill Pippen Oval",
+            "longName": "Bill Pippen Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 14,
+            "name": "Iqbal Stadium",
+            "longName": "Iqbal Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 66,
+            "name": "Senwes Park",
+            "longName": "Senwes Park",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 101,
+            "name": "City Oval",
+            "longName": "City Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 102,
+            "name": "Recreation Ground",
+            "longName": "Recreation Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 369,
+            "name": "Willowmoore Park A Field",
+            "longName": "Willowmoore Park A Field",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213311,
+            "name": "Polokwane Cricket Club Ground ",
+            "longName": "Polokwane Cricket Club Ground ",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 202,
+            "name": "North-West University No1 Ground",
+            "longName": "North-West University No1 Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 403,
+            "name": "Country Club B Field",
+            "longName": "Country Club B Field",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 448,
+            "name": "University of Free State Ground",
+            "longName": "University of Free State Ground",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213343,
+            "name": "Uplands College",
+            "longName": "Uplands College",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213739,
+            "name": "Bir Sreshtho Flight Lieutenant Matiur Rahman Stadium",
+            "longName": "Bir Sreshtho Flight Lieutenant Matiur Rahman Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 292,
+            "name": "Carrara Oval",
+            "longName": "Carrara Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 119,
+            "name": "Saxton Oval",
+            "longName": "Saxton Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 128,
+            "name": "University Oval",
+            "longName": "University Oval",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 384,
+            "name": "West End Park International Cricket Stadium",
+            "longName": "West End Park International Cricket Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 27,
+            "name": "Shaheed Veer Narayan Singh International Stadium",
+            "longName": "Shaheed Veer Narayan Singh International Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 115,
+            "name": "JSCA International Stadium Complex",
+            "longName": "JSCA International Stadium Complex",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 269,
+            "name": "International Sports Stadium",
+            "longName": "International Sports Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 1213537,
+            "name": "Kotambi Stadium",
+            "longName": "Kotambi Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 335,
+            "name": "The Sevens Stadium",
+            "longName": "The Sevens Stadium",
+            "dataAvailable": 0
+        },
+        {
+            "groundId": 251,
+            "name": "Imran Khan Cricket Stadium",
+            "longName": "Imran Khan Cricket Stadium",
+            "dataAvailable": 0
+        }
+    ]
+}

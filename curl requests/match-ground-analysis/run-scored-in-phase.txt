@@ -1,0 +1,180 @@
+curl 'https://api.spoda.ai/match-ground-analysis/run-scored-in-phase?matchId=95838&groundId=17&groundIdTwo=' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: en-US,en;q=0.9,hi;q=0.8' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -b 'auth-cookie=j%3A%7B%22access_token%22%3A%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMGY1ZjJjLWUzZTEtNGI3NS05MDVlLWJkZTQ5ODc1ZWIxYyIsImVtYWlsIjoicHVzaGthcnNoZXR5ZTgwM0BnbWFpbC5jb20iLCJmdWxsTmFtZSI6IlB1c2hrYXIgU2hldHllIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3NzQ3ODM2MTYsImV4cCI6MTc3NzM3NTYxNn0.QKR6NCZ0P12thiUEOfqAVW-qZCPhoz2gi-W9KEw8j4I%22%2C%22refresh_token%22%3A%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMGY1ZjJjLWUzZTEtNGI3NS05MDVlLWJkZTQ5ODc1ZWIxYyIsImVtYWlsIjoicHVzaGthcnNoZXR5ZTgwM0BnbWFpbC5jb20iLCJmdWxsTmFtZSI6IlB1c2hrYXIgU2hldHllIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3NzQ3ODM2MTYsImV4cCI6MTc3NzM3NTYxNn0.IQYW-osIsP93MIyo78T1wD4baxDR9TlfxuFvwHislsY%22%7D; auth-role=User' \
+  -H 'Origin: https://www.spoda.ai' \
+  -H 'Pragma: no-cache' \
+  -H 'Referer: https://www.spoda.ai/' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-site' \
+  -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36' \
+  -H 'sec-ch-ua: "Chromium";v="146", "Not-A.Brand";v="24", "Google Chrome";v="146"' \
+  -H 'sec-ch-ua-mobile: ?1' \
+  -H 'sec-ch-ua-platform: "Android"'
+
+
+  {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "groundId": {
+      "type": "string"
+    },
+    "groundIdTwo": {
+      "type": "string"
+    },
+    "tabType": {
+      "type": "string"
+    },
+    "widgetType": {
+      "type": "string"
+    },
+    "widgets": {
+      "type": "object",
+      "properties": {
+        "widget_type": {
+          "type": "string"
+        },
+        "firstInnings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "match": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "match",
+                    "value"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "title",
+              "data"
+            ]
+          }
+        },
+        "secondInnings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "match": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "match",
+                    "value"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "title",
+              "data"
+            ]
+          }
+        }
+      },
+      "required": [
+        "widget_type",
+        "firstInnings",
+        "secondInnings"
+      ]
+    }
+  },
+  "required": [
+    "groundId",
+    "groundIdTwo",
+    "tabType",
+    "widgetType",
+    "widgets"
+  ]
+}
+
+
+{
+    "groundId": "17",
+    "groundIdTwo": "",
+    "tabType": "ground",
+    "widgetType": "ground_run_scored_in_phase",
+    "widgets": {
+        "widget_type": "horizontal-bar",
+        "firstInnings": [
+            {
+                "title": "Wankhede Stadium",
+                "data": [
+                    {
+                        "match": "Power play",
+                        "value": 47.27
+                    },
+                    {
+                        "match": "Middle",
+                        "value": 72.95
+                    },
+                    {
+                        "match": "Death",
+                        "value": 51.72
+                    },
+                    {
+                        "match": "In 20 overs",
+                        "value": 171.94
+                    }
+                ]
+            }
+        ],
+        "secondInnings": [
+            {
+                "title": "Wankhede Stadium",
+                "data": [
+                    {
+                        "match": "Power play",
+                        "value": 49.95
+                    },
+                    {
+                        "match": "Middle",
+                        "value": 72.9
+                    },
+                    {
+                        "match": "Death",
+                        "value": 41.31
+                    },
+                    {
+                        "match": "In 20 overs",
+                        "value": 159.54
+                    }
+                ]
+            }
+        ]
+    }
+}

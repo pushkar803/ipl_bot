@@ -1,0 +1,24 @@
+<div class="space-y-4 fade-in">
+  {% for s in sections %}
+  <div class="card bg-base-300/50 border-l-4 {{ s.border }} shadow-sm hover:shadow-md transition-shadow">
+    <div class="card-body p-5">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-xl">{{ s.icon }}</span>
+        <h4 class="font-bold text-base">{{ s.title }}</h4>
+        <div class="badge {{ s.badge }} badge-xs badge-outline ml-auto">AI</div>
+      </div>
+      <div class="ai-prose text-sm leading-relaxed text-base-content/85">
+        {{ s.html|safe }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="flex items-center gap-3 mt-6 pt-4 border-t border-base-content/10">
+  <div class="badge badge-success gap-1">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+    Analysis complete
+  </div>
+  <span class="text-xs text-base-content/40">Powered by GPT-4o-mini</span>
+</div>

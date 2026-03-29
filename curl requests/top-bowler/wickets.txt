@@ -1,0 +1,460 @@
+curl 'https://api.spoda.ai/top-bowler/wickets?matchId=95838&minWicketsTaken=2' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: en-US,en;q=0.9,hi;q=0.8' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Origin: https://www.spoda.ai' \
+  -H 'Pragma: no-cache' \
+  -H 'Referer: https://www.spoda.ai/' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-site' \
+  -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36' \
+  -H 'sec-ch-ua: "Chromium";v="146", "Not-A.Brand";v="24", "Google Chrome";v="146"' \
+  -H 'sec-ch-ua-mobile: ?1' \
+  -H 'sec-ch-ua-platform: "Android"'
+
+  {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "number"
+    },
+    "message": {
+      "type": "string"
+    },
+    "squadAnnounced": {
+      "type": "boolean"
+    },
+    "probability": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "playerId": {
+            "type": "number"
+          },
+          "playerName": {
+            "type": "string"
+          },
+          "playerLongName": {
+            "type": "string"
+          },
+          "playingRoles": {
+            "type": "string"
+          },
+          "teamId": {
+            "type": "number"
+          },
+          "teamName": {
+            "type": "string"
+          },
+          "teamLongName": {
+            "type": "string"
+          },
+          "probability": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "playerId",
+          "playerName",
+          "playerLongName",
+          "playingRoles",
+          "teamId",
+          "teamName",
+          "teamLongName",
+          "probability"
+        ]
+      }
+    }
+  },
+  "required": [
+    "code",
+    "message",
+    "squadAnnounced",
+    "probability"
+  ]
+}
+
+
+
+{
+    "code": 200,
+    "message": "Success",
+    "squadAnnounced": false,
+    "probability": [
+        {
+            "playerId": 111765,
+            "playerName": "R Angad Bawa",
+            "playerLongName": "Raj Angad Bawa",
+            "playingRoles": "all",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 71.429
+        },
+        {
+            "playerId": 95635,
+            "playerName": "M Pathirana",
+            "playerLongName": "Matheesha Pathirana",
+            "playingRoles": "bowl",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 44.615
+        },
+        {
+            "playerId": 118504,
+            "playerName": "AM Ghazanfar",
+            "playerLongName": "Allah Mohammad Ghazanfar",
+            "playingRoles": "bowl",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 38.889
+        },
+        {
+            "playerId": 607,
+            "playerName": "J Bumrah",
+            "playerLongName": "Jasprit Bumrah",
+            "playingRoles": "bowl",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 37.931
+        },
+        {
+            "playerId": 90910,
+            "playerName": "V Chakaravarthy",
+            "playerLongName": "Varun Chakaravarthy",
+            "playingRoles": "bowl",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 35.78
+        },
+        {
+            "playerId": 47,
+            "playerName": "T Boult",
+            "playerLongName": "Trent Boult",
+            "playingRoles": "bowl",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 34.896
+        },
+        {
+            "playerId": 810,
+            "playerName": "S Thakur",
+            "playerLongName": "Shardul Thakur",
+            "playingRoles": "bowl",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 34.234
+        },
+        {
+            "playerId": 94817,
+            "playerName": "A Ankolekar",
+            "playerLongName": "Atharva Ankolekar",
+            "playingRoles": "all",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 33.333
+        },
+        {
+            "playerId": 96649,
+            "playerName": "A Kumar",
+            "playerLongName": "Ashwani Kumar",
+            "playingRoles": "bowl",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 33.333
+        },
+        {
+            "playerId": 90681,
+            "playerName": "RM Singh",
+            "playerLongName": "Ramandeep Singh",
+            "playingRoles": "all",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 33.333
+        },
+        {
+            "playerId": 96653,
+            "playerName": "V Arora",
+            "playerLongName": "Vaibhav Arora",
+            "playingRoles": "bowl",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 30.556
+        },
+        {
+            "playerId": 1923,
+            "playerName": "M Santner",
+            "playerLongName": "Mitchell Santner",
+            "playingRoles": "all",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 30.097
+        },
+        {
+            "playerId": 104934,
+            "playerName": "U Malik",
+            "playerLongName": "Umran Malik",
+            "playingRoles": "bowl",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 29.63
+        },
+        {
+            "playerId": 93462,
+            "playerName": "B Muzarabani",
+            "playerLongName": "Blessing Muzarabani",
+            "playingRoles": "bowl",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 28.947
+        },
+        {
+            "playerId": 601,
+            "playerName": "S Narine",
+            "playerLongName": "Sunil Narine",
+            "playingRoles": "all",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 28.879
+        },
+        {
+            "playerId": 105696,
+            "playerName": "PH Solanki",
+            "playerLongName": "Prashant Solanki",
+            "playingRoles": "bowl",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 28.571
+        },
+        {
+            "playerId": 111839,
+            "playerName": "M Rawat",
+            "playerLongName": "Mayank Rawat",
+            "playingRoles": "all",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 28
+        },
+        {
+            "playerId": 53819,
+            "playerName": "DL Chahar",
+            "playerLongName": "Deepak Chahar",
+            "playingRoles": "bowl",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 25.743
+        },
+        {
+            "playerId": 48789,
+            "playerName": "C Bosch",
+            "playerLongName": "Corbin Bosch",
+            "playingRoles": "all",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 25
+        },
+        {
+            "playerId": 93566,
+            "playerName": "M Markande",
+            "playerLongName": "Mayank Markande",
+            "playingRoles": "bowl",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 23.256
+        },
+        {
+            "playerId": 1081,
+            "playerName": "R Ravindra",
+            "playerLongName": "Rachin Ravindra",
+            "playingRoles": "bat",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 20.37
+        },
+        {
+            "playerId": 51319,
+            "playerName": "WG Jacks",
+            "playerLongName": "Will Jacks",
+            "playingRoles": "all",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 19.767
+        },
+        {
+            "playerId": 53988,
+            "playerName": "NA Saini",
+            "playerLongName": "Navdeep Saini",
+            "playingRoles": "bowl",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 19.149
+        },
+        {
+            "playerId": 727,
+            "playerName": "H Pandya",
+            "playerLongName": "Hardik Pandya",
+            "playingRoles": "all",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 18.75
+        },
+        {
+            "playerId": 93130,
+            "playerName": "CM Green",
+            "playerLongName": "Cameron Green",
+            "playingRoles": "all",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 13.333
+        },
+        {
+            "playerId": 94429,
+            "playerName": "TL Varma",
+            "playerLongName": "N. Tilak Varma",
+            "playingRoles": "bat",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 12.5
+        },
+        {
+            "playerId": 90737,
+            "playerName": "AS Roy",
+            "playerLongName": "Anukul Roy",
+            "playingRoles": "all",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 11.765
+        },
+        {
+            "playerId": 52153,
+            "playerName": "SE Rutherford",
+            "playerLongName": "Sherfane Rutherford",
+            "playingRoles": "bat",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 11.111
+        },
+        {
+            "playerId": 93340,
+            "playerName": "K Tyagi",
+            "playerLongName": "Kartik Tyagi",
+            "playingRoles": "bowl",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 10
+        },
+        {
+            "playerId": 55467,
+            "playerName": "R Powell",
+            "playerLongName": "Rovman Powell",
+            "playingRoles": "bat",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 9.524
+        },
+        {
+            "playerId": 115,
+            "playerName": "R Sharma",
+            "playerLongName": "Rohit Sharma",
+            "playingRoles": "bat",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 9.375
+        },
+        {
+            "playerId": 111930,
+            "playerName": "Naman Dhir",
+            "playerLongName": "Naman Dhir",
+            "playingRoles": "bat",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 6.667
+        },
+        {
+            "playerId": 598,
+            "playerName": "S Yadav",
+            "playerLongName": "Surya Kumar Yadav",
+            "playingRoles": "bat",
+            "teamId": 593,
+            "teamName": "Mumbai Indians",
+            "teamLongName": "Mumbai Indians",
+            "probability": 0
+        },
+        {
+            "playerId": 55676,
+            "playerName": "R Singh",
+            "playerLongName": "Rinku Singh",
+            "playingRoles": "bat",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 0
+        },
+        {
+            "playerId": 1083,
+            "playerName": "F Allen",
+            "playerLongName": "Finn Allen",
+            "playingRoles": "wk",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 0
+        },
+        {
+            "playerId": 127,
+            "playerName": "A Rahane",
+            "playerLongName": "Ajinkya Rahane",
+            "playingRoles": "bat",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 0
+        },
+        {
+            "playerId": 54129,
+            "playerName": "RA Tripathi",
+            "playerLongName": "Rahul Tripathi",
+            "playingRoles": "bat",
+            "teamId": 591,
+            "teamName": "Kolkata Knight Riders",
+            "teamLongName": "Kolkata Knight Riders",
+            "probability": 0
+        }
+    ]
+}

@@ -1,0 +1,80 @@
+curl 'https://api.spoda.ai/top-bowler/stats?matchId=95838' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: en-US,en;q=0.9,hi;q=0.8' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Origin: https://www.spoda.ai' \
+  -H 'Pragma: no-cache' \
+  -H 'Referer: https://www.spoda.ai/' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-site' \
+  -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36' \
+  -H 'sec-ch-ua: "Chromium";v="146", "Not-A.Brand";v="24", "Google Chrome";v="146"' \
+  -H 'sec-ch-ua-mobile: ?1' \
+  -H 'sec-ch-ua-platform: "Android"'
+
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "number"
+    },
+    "message": {
+      "type": "string"
+    },
+    "stats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "category",
+          "title",
+          "value"
+        ]
+      }
+    }
+  },
+  "required": [
+    "code",
+    "message",
+    "stats"
+  ]
+}
+
+
+{
+    "code": 200,
+    "message": "Success",
+    "stats": [
+        {
+            "category": "min_wicket_frequency",
+            "title": "Here's a wicket taker!",
+            "value": "Matheesha Pathirana has taken more than 3 wickets in 18% of the domestic innings they bowled."
+        },
+        {
+            "category": "max_economy_frequency",
+            "title": "Keeping things tight...",
+            "value": "Jasprit Bumrah's economy is below 6.00 in 33% of the domestic innings they bowled."
+        },
+        {
+            "category": "wickets_in_phase",
+            "title": "Where do they strike?",
+            "value": "Mayank Markande has taken 92% of wickets in middle overs in domestic games."
+        }
+    ]
+}

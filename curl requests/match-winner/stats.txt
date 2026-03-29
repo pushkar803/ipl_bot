@@ -1,0 +1,106 @@
+curl 'https://api.spoda.ai/match-winner/stats?matchId=95838' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: en-US,en;q=0.9,hi;q=0.8' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -H 'Origin: https://www.spoda.ai' \
+  -H 'Pragma: no-cache' \
+  -H 'Referer: https://www.spoda.ai/' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-site' \
+  -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36' \
+  -H 'sec-ch-ua: "Chromium";v="146", "Not-A.Brand";v="24", "Google Chrome";v="146"' \
+  -H 'sec-ch-ua-mobile: ?1' \
+  -H 'sec-ch-ua-platform: "Android"'
+
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "number"
+    },
+    "message": {
+      "type": "string"
+    },
+    "stats": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "category",
+          "title",
+          "value"
+        ]
+      }
+    }
+  },
+  "required": [
+    "code",
+    "message",
+    "stats"
+  ]
+}
+
+{
+    "code": 200,
+    "message": "Success",
+    "stats": [
+        {
+            "category": "win_loss_ratio",
+            "title": "Win/Loss Ratio",
+            "value": "In Domestic matches, Mumbai Indians has a win/loss ratio of 1.07 and Kolkata Knight Riders has a win/loss ratio of 0.9"
+        },
+        {
+            "category": "win_percentage_batting_first",
+            "title": "Bat/bowl first?",
+            "value": "In Domestic matches while batting first, Mumbai Indians has won 53% of the matches and Kolkata Knight Riders has won 44% of the matches"
+        },
+        {
+            "category": "win_percentage_batting_second",
+            "title": "Bat/bowl first?",
+            "value": "In Domestic matches while batting second, Mumbai Indians has won 56% of the matches and Kolkata Knight Riders has won 58% of the matches"
+        },
+        {
+            "category": "win_percentage_target",
+            "title": "What's a good total?",
+            "value": "In Domestic matches, Mumbai Indians has won 100% of the matches and Kolkata Knight Riders has won 75% of the matches when they've set a target of 200 or above"
+        }
+    ]
+}
+
+{
+    "code": 200,
+    "message": "Success",
+    "stats": [
+        {
+            "category": "win_percentage_when_batsman_scored",
+            "title": "How crucial is a batter?",
+            "value": "Mumbai Indians has won 66% times when Surya Kumar Yadav has scored more than 50 runs."
+        },
+        {
+            "category": "batsman_boundary_percentage",
+            "title": "The super striker!",
+            "value": "Naman Dhir has an average boundary rate of 24% in 29 domestic innings."
+        },
+        {
+            "category": "batsman_dot_percentage",
+            "title": "The pressure reliever!",
+            "value": "Only 30% of balls faced by Angkrish Raghuvanshi are dots in 20 domestic innings."
+        }
+    ]
+}

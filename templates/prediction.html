@@ -1,0 +1,334 @@
+{% extends "base.html" %}
+{% block title %}{{ match.team_name1 }} vs {{ match.team_name2 }} — Prediction{% endblock %}
+
+{% block nav_extra %}
+<a href="/" class="btn btn-ghost btn-sm gap-1">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+  All Matches
+</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- Match Header -->
+<div class="card bg-base-200 shadow-xl mb-8 fade-in overflow-hidden">
+  <div class="card-body p-8">
+    <div class="flex items-center justify-between mb-2">
+      <div class="badge badge-accent">{{ match.series_name }}</div>
+      <div class="flex items-center gap-2 text-sm text-base-content/60">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+        {{ match.ground }}
+      </div>
+    </div>
+
+    <div class="flex items-center justify-center gap-6 md:gap-12 py-6">
+      <div class="flex flex-col items-center gap-3 flex-1">
+        <div class="team-badge team-badge-lg" style="background:{{ match.team1_meta.bg }}; color:{{ match.team1_meta.text }}">
+          {{ match.team1_meta.abbr }}
+        </div>
+        <h2 class="text-xl font-bold text-center">{{ match.team_name1 }}</h2>
+        <div class="text-3xl font-black {% if prob1 > prob2 %}text-success{% else %}text-base-content/60{% endif %}">
+          {{ (prob1 * 100)|round(1) }}%
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-1">
+        <div class="text-3xl font-black text-base-content/20">VS</div>
+        <div class="text-xs text-base-content/40">{{ match.start_date[11:16] }} IST</div>
+      </div>
+
+      <div class="flex flex-col items-center gap-3 flex-1">
+        <div class="team-badge team-badge-lg" style="background:{{ match.team2_meta.bg }}; color:{{ match.team2_meta.text }}">
+          {{ match.team2_meta.abbr }}
+        </div>
+        <h2 class="text-xl font-bold text-center">{{ match.team_name2 }}</h2>
+        <div class="text-3xl font-black {% if prob2 > prob1 %}text-success{% else %}text-base-content/60{% endif %}">
+          {{ (prob2 * 100)|round(1) }}%
+        </div>
+      </div>
+    </div>
+
+    <!-- Win probability bar -->
+    {% set p1_pct = (prob1 * 100)|round|int %}
+    {% set p2_pct = (prob2 * 100)|round|int %}
+    {% set total = p1_pct + p2_pct if (p1_pct + p2_pct) > 0 else 1 %}
+    <div class="w-full flex rounded-full h-4 overflow-hidden mt-2">
+      <div class="prob-bar h-full" style="width:{{ (p1_pct * 100 / total)|round }}%; background:{{ match.team1_meta.bg }}"></div>
+      <div class="prob-bar h-full" style="width:{{ (p2_pct * 100 / total)|round }}%; background:{{ match.team2_meta.bg }}"></div>
+    </div>
+    <div class="flex justify-between text-xs text-base-content/50 mt-1">
+      <span>{{ match.team1_meta.abbr }} {{ p1_pct }}%</span>
+      <span>{{ match.team2_meta.abbr }} {{ p2_pct }}%</span>
+    </div>
+  </div>
+</div>
+
+<!-- Venue Stats & Key Insights -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+  {% if par_score %}
+  <div class="stat bg-base-200 rounded-box shadow fade-in">
+    <div class="stat-figure text-primary"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg></div>
+    <div class="stat-title">Par Score</div>
+    <div class="stat-value text-primary">{{ par_score|round|int }}</div>
+    <div class="stat-desc">Batting first at this venue</div>
+  </div>
+  {% endif %}
+
+  {% if venue_win_pct %}
+  <div class="stat bg-base-200 rounded-box shadow fade-in">
+    <div class="stat-figure text-secondary"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg></div>
+    <div class="stat-title">Bat First Win%</div>
+    <div class="stat-value text-secondary">{{ venue_win_pct.bat_first }}%</div>
+    <div class="stat-desc">vs {{ venue_win_pct.bat_second }}% batting second</div>
+  </div>
+  {% endif %}
+
+  {% for gb in ground_batting %}
+  <div class="stat bg-base-200 rounded-box shadow fade-in">
+    <div class="stat-title">{{ gb.team }} — Venue Avg</div>
+    <div class="stat-value text-lg">{{ gb.first or '—' }} / {{ gb.second or '—' }}</div>
+    <div class="stat-desc">1st Inn / 2nd Inn</div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Winner Stats / Key Insights -->
+{% if winner_stats %}
+<section class="mb-10 fade-in">
+  <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-warning" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    Key Insights
+  </h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {% for s in winner_stats %}
+    <div class="card bg-base-200 shadow">
+      <div class="card-body p-5">
+        <h4 class="card-title text-sm text-warning">{{ s.title }}</h4>
+        <p class="text-sm text-base-content/80">{{ s.value }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<!-- Phase Form -->
+{% if phase_form %}
+<section class="mb-10 fade-in">
+  <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-info" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+    Phase-wise Form (Last 5 Matches Avg)
+  </h3>
+  <div class="overflow-x-auto">
+    <table class="table table-zebra w-full">
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th class="text-center">{{ match.team_name1 }}</th>
+          <th class="text-center">{{ match.team_name2 }}</th>
+          <th class="text-center">Edge</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pf in phase_form %}
+        <tr>
+          <td class="font-semibold">{{ pf.phase }}</td>
+          <td class="text-center {% if pf.team1_avg > pf.team2_avg %}text-success font-bold{% endif %}">{{ pf.team1_avg }}</td>
+          <td class="text-center {% if pf.team2_avg > pf.team1_avg %}text-success font-bold{% endif %}">{{ pf.team2_avg }}</td>
+          <td class="text-center">
+            {% if pf.team1_avg > pf.team2_avg %}
+              <span class="badge badge-success badge-sm">{{ match.team1_meta.abbr }}</span>
+            {% elif pf.team2_avg > pf.team1_avg %}
+              <span class="badge badge-success badge-sm">{{ match.team2_meta.abbr }}</span>
+            {% else %}
+              <span class="badge badge-ghost badge-sm">Even</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+
+<!-- Boundary Percentages -->
+{% if boundary_pct %}
+<section class="mb-10 fade-in">
+  <h3 class="text-xl font-bold mb-4">Boundary Percentages</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {% for bp in boundary_pct %}
+    <div class="card bg-base-200 shadow">
+      <div class="card-body p-5">
+        <h4 class="font-bold text-sm mb-3">{{ bp.team }}</h4>
+        <div class="flex gap-6">
+          <div class="flex-1">
+            <div class="text-xs text-base-content/50 mb-1">Fours</div>
+            <div class="flex items-center gap-2">
+              <progress class="progress progress-info w-full" value="{{ bp.fours or 0 }}" max="100"></progress>
+              <span class="text-sm font-bold">{{ bp.fours or 0 }}%</span>
+            </div>
+          </div>
+          <div class="flex-1">
+            <div class="text-xs text-base-content/50 mb-1">Sixes</div>
+            <div class="flex items-center gap-2">
+              <progress class="progress progress-warning w-full" value="{{ bp.sixes or 0 }}" max="100"></progress>
+              <span class="text-sm font-bold">{{ bp.sixes or 0 }}%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<!-- Top Batsmen -->
+{% if top_batsmen %}
+<section class="mb-10 fade-in">
+  <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+    <span class="text-xl">🏏</span>
+    Top Batsmen — 20+ Runs Probability
+  </h3>
+  <div class="overflow-x-auto">
+    <table class="table w-full">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Player</th>
+          <th>Team</th>
+          <th>Role</th>
+          <th>Probability</th>
+          <th class="w-40"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in top_batsmen %}
+        <tr class="hover">
+          <td class="text-base-content/50">{{ loop.index }}</td>
+          <td class="font-semibold">{{ p.playerLongName }}</td>
+          <td><span class="badge badge-ghost badge-sm">{{ p.teamName }}</span></td>
+          <td class="uppercase text-xs tracking-wider text-base-content/50">{{ p.playingRoles }}</td>
+          <td class="font-bold {% if p.probability >= 60 %}text-success{% elif p.probability >= 40 %}text-warning{% else %}text-base-content/70{% endif %}">
+            {{ p.probability }}%
+          </td>
+          <td><progress class="progress {% if p.probability >= 60 %}progress-success{% elif p.probability >= 40 %}progress-warning{% else %}progress-info{% endif %} w-full" value="{{ p.probability }}" max="100"></progress></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+
+<!-- Batsman Fun Facts -->
+{% if batsmen_stats %}
+<section class="mb-10 fade-in">
+  <h3 class="text-xl font-bold mb-4">Batsman Fun Facts</h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {% for s in batsmen_stats %}
+    <div class="card bg-base-200 shadow">
+      <div class="card-body p-5">
+        <h4 class="card-title text-sm text-accent">{{ s.title }}</h4>
+        <p class="text-sm">{{ s.value }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<!-- Top Bowlers -->
+{% if top_bowlers %}
+<section class="mb-10 fade-in">
+  <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+    <span class="text-xl">⚡</span>
+    Top Bowlers — 2+ Wickets Probability
+  </h3>
+  <div class="overflow-x-auto">
+    <table class="table w-full">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Player</th>
+          <th>Team</th>
+          <th>Role</th>
+          <th>Probability</th>
+          <th class="w-40"></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in top_bowlers %}
+        <tr class="hover">
+          <td class="text-base-content/50">{{ loop.index }}</td>
+          <td class="font-semibold">{{ p.playerLongName }}</td>
+          <td><span class="badge badge-ghost badge-sm">{{ p.teamName }}</span></td>
+          <td class="uppercase text-xs tracking-wider text-base-content/50">{{ p.playingRoles }}</td>
+          <td class="font-bold {% if p.probability >= 40 %}text-success{% elif p.probability >= 25 %}text-warning{% else %}text-base-content/70{% endif %}">
+            {{ p.probability }}%
+          </td>
+          <td><progress class="progress {% if p.probability >= 40 %}progress-success{% elif p.probability >= 25 %}progress-warning{% else %}progress-info{% endif %} w-full" value="{{ p.probability }}" max="100"></progress></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endif %}
+
+<!-- Bowler Fun Facts -->
+{% if bowler_stats %}
+<section class="mb-10 fade-in">
+  <h3 class="text-xl font-bold mb-4">Bowler Fun Facts</h3>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {% for s in bowler_stats %}
+    <div class="card bg-base-200 shadow">
+      <div class="card-body p-5">
+        <h4 class="card-title text-sm text-accent">{{ s.title }}</h4>
+        <p class="text-sm">{{ s.value }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<!-- AI Analysis -->
+<section class="mb-10 fade-in">
+  <div class="card bg-gradient-to-br from-base-200 to-base-300 shadow-xl">
+    <div class="card-body">
+      <h3 class="card-title text-xl gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+        AI-Powered Deep Analysis
+      </h3>
+
+      <div id="ai-result">
+        {% if ai_available %}
+        <p class="text-base-content/60 mb-4">Get a comprehensive AI analysis including match winner prediction, key factors, and player picks.</p>
+        <button
+          class="btn btn-success gap-2"
+          hx-post="/api/ai-analysis/{{ match.match_id }}"
+          hx-target="#ai-result"
+          hx-swap="innerHTML"
+          hx-indicator="#ai-spinner"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          Generate Analysis
+        </button>
+        <div id="ai-spinner" class="htmx-indicator mt-4">
+          <span class="loading loading-dots loading-lg text-success"></span>
+          <span class="ml-2 text-sm text-base-content/60">Analyzing match data with AI...</span>
+        </div>
+        {% else %}
+        <div class="alert alert-warning">
+          <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+          <span>Set <code>OPENAI_API_KEY</code> in your <code>.env</code> file to enable AI analysis.</span>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

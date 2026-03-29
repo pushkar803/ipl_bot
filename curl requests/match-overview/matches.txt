@@ -1,0 +1,1225 @@
+curl 'https://api.spoda.ai/match-overview/matches' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Accept-Language: en-US,en;q=0.9,hi;q=0.8' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Connection: keep-alive' \
+  -b 'auth-cookie=j%3A%7B%22access_token%22%3A%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMGY1ZjJjLWUzZTEtNGI3NS05MDVlLWJkZTQ5ODc1ZWIxYyIsImVtYWlsIjoicHVzaGthcnNoZXR5ZTgwM0BnbWFpbC5jb20iLCJmdWxsTmFtZSI6IlB1c2hrYXIgU2hldHllIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3NzQ3ODM2MTYsImV4cCI6MTc3NzM3NTYxNn0.QKR6NCZ0P12thiUEOfqAVW-qZCPhoz2gi-W9KEw8j4I%22%2C%22refresh_token%22%3A%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMGY1ZjJjLWUzZTEtNGI3NS05MDVlLWJkZTQ5ODc1ZWIxYyIsImVtYWlsIjoicHVzaGthcnNoZXR5ZTgwM0BnbWFpbC5jb20iLCJmdWxsTmFtZSI6IlB1c2hrYXIgU2hldHllIiwicm9sZSI6IlVzZXIiLCJpYXQiOjE3NzQ3ODM2MTYsImV4cCI6MTc3NzM3NTYxNn0.IQYW-osIsP93MIyo78T1wD4baxDR9TlfxuFvwHislsY%22%7D; auth-role=User' \
+  -H 'Origin: https://www.spoda.ai' \
+  -H 'Pragma: no-cache' \
+  -H 'Referer: https://www.spoda.ai/' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: same-site' \
+  -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36' \
+  -H 'sec-ch-ua: "Chromium";v="146", "Not-A.Brand";v="24", "Google Chrome";v="146"' \
+  -H 'sec-ch-ua-mobile: ?1' \
+  -H 'sec-ch-ua-platform: "Android"'
+
+
+
+  {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "number"
+    },
+    "message": {
+      "type": "string"
+    },
+    "today": {
+      "type": "string"
+    },
+    "todaysMatches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "matchId": {
+            "type": "number"
+          },
+          "seriesId": {
+            "type": "number"
+          },
+          "seriesName": {
+            "type": "string"
+          },
+          "seriesScribeId": {
+            "type": "number"
+          },
+          "seriesLongName": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "season": {
+            "type": "string"
+          },
+          "international": {
+            "type": "number"
+          },
+          "isTournament": {
+            "type": "number"
+          },
+          "teamId1": {
+            "type": "number"
+          },
+          "teamName1": {
+            "type": "string"
+          },
+          "teamLongName1": {
+            "type": "string"
+          },
+          "teamId2": {
+            "type": "number"
+          },
+          "teamName2": {
+            "type": "string"
+          },
+          "teamLongName2": {
+            "type": "string"
+          },
+          "groundId": {
+            "type": "number"
+          },
+          "ground": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "matchId",
+          "seriesId",
+          "seriesName",
+          "seriesScribeId",
+          "seriesLongName",
+          "title",
+          "season",
+          "international",
+          "isTournament",
+          "teamId1",
+          "teamName1",
+          "teamLongName1",
+          "teamId2",
+          "teamName2",
+          "teamLongName2",
+          "groundId",
+          "ground",
+          "startDate"
+        ]
+      }
+    },
+    "tomorrowsMatches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "matchId": {
+            "type": "number"
+          },
+          "seriesId": {
+            "type": "number"
+          },
+          "seriesName": {
+            "type": "string"
+          },
+          "seriesScribeId": {
+            "type": "number"
+          },
+          "seriesLongName": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "season": {
+            "type": "string"
+          },
+          "international": {
+            "type": "number"
+          },
+          "isTournament": {
+            "type": "number"
+          },
+          "teamId1": {
+            "type": "number"
+          },
+          "teamName1": {
+            "type": "string"
+          },
+          "teamLongName1": {
+            "type": "string"
+          },
+          "teamId2": {
+            "type": "number"
+          },
+          "teamName2": {
+            "type": "string"
+          },
+          "teamLongName2": {
+            "type": "string"
+          },
+          "groundId": {
+            "type": "number"
+          },
+          "ground": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "matchId",
+          "seriesId",
+          "seriesName",
+          "seriesScribeId",
+          "seriesLongName",
+          "title",
+          "season",
+          "international",
+          "isTournament",
+          "teamId1",
+          "teamName1",
+          "teamLongName1",
+          "teamId2",
+          "teamName2",
+          "teamLongName2",
+          "groundId",
+          "ground",
+          "startDate"
+        ]
+      }
+    },
+    "previousMatches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "matchId": {
+            "type": "number"
+          },
+          "seriesId": {
+            "type": "number"
+          },
+          "seriesName": {
+            "type": "string"
+          },
+          "seriesScribeId": {
+            "type": "number"
+          },
+          "seriesLongName": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "season": {
+            "type": "string"
+          },
+          "international": {
+            "type": "number"
+          },
+          "isTournament": {
+            "type": "number"
+          },
+          "teamId1": {
+            "type": "number"
+          },
+          "teamName1": {
+            "type": "string"
+          },
+          "teamLongName1": {
+            "type": "string"
+          },
+          "teamId2": {
+            "type": "number"
+          },
+          "teamName2": {
+            "type": "string"
+          },
+          "teamLongName2": {
+            "type": "string"
+          },
+          "groundId": {
+            "type": "number"
+          },
+          "ground": {
+            "type": "string"
+          },
+          "dataAvailable": {
+            "type": "number"
+          },
+          "startDate": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "matchId",
+          "seriesId",
+          "seriesName",
+          "seriesScribeId",
+          "seriesLongName",
+          "title",
+          "season",
+          "international",
+          "isTournament",
+          "teamId1",
+          "teamName1",
+          "teamLongName1",
+          "teamId2",
+          "teamName2",
+          "teamLongName2",
+          "groundId",
+          "ground",
+          "dataAvailable",
+          "startDate"
+        ]
+      }
+    }
+  },
+  "required": [
+    "code",
+    "message",
+    "today",
+    "todaysMatches",
+    "tomorrowsMatches",
+    "previousMatches"
+  ]
+}
+
+{
+    "code": 200,
+    "message": "Success",
+    "today": "2026-03-29",
+    "todaysMatches": [
+        {
+            "matchId": 95781,
+            "seriesId": 129937,
+            "seriesName": "PSL 2026",
+            "seriesScribeId": 129937,
+            "seriesLongName": "Pakistan Super League",
+            "title": "Hyderabad Kingsmen vs Quetta Gladiators",
+            "season": "2026",
+            "international": 0,
+            "isTournament": 0,
+            "teamId1": 129282,
+            "teamName1": "Hyderabad Kingsmen",
+            "teamLongName1": "Hyderabad Kingsmen",
+            "teamId2": 14465,
+            "teamName2": "Quetta Gladiators",
+            "teamLongName2": "Quetta Gladiators",
+            "groundId": 164,
+            "ground": "Gaddafi Stadium",
+            "startDate": "2026-03-29T09:30:00"
+        },
+        {
+            "matchId": 95782,
+            "seriesId": 129937,
+            "seriesName": "PSL 2026",
+            "seriesScribeId": 129937,
+            "seriesLongName": "Pakistan Super League",
+            "title": "Lahore Qalandars vs Karachi Kings",
+            "season": "2026",
+            "international": 0,
+            "isTournament": 0,
+            "teamId1": 14470,
+            "teamName1": "Lahore Qalandars",
+            "teamLongName1": "Lahore Qalandars",
+            "teamId2": 14469,
+            "teamName2": "Karachi Kings",
+            "teamLongName2": "Karachi Kings",
+            "groundId": 164,
+            "ground": "Gaddafi Stadium",
+            "startDate": "2026-03-29T14:00:00"
+        },
+        {
+            "matchId": 95838,
+            "seriesId": 129908,
+            "seriesName": "IPL 2026",
+            "seriesScribeId": 129908,
+            "seriesLongName": "Indian Premier League",
+            "title": "Mumbai Indians vs Kolkata Knight Riders",
+            "season": "2026",
+            "international": 0,
+            "isTournament": 0,
+            "teamId1": 593,
+            "teamName1": "Mumbai Indians",
+            "teamLongName1": "Mumbai Indians",
+            "teamId2": 591,
+            "teamName2": "Kolkata Knight Riders",
+            "teamLongName2": "Kolkata Knight Riders",
+            "groundId": 17,
+            "ground": "Wankhede Stadium",
+            "startDate": "2026-03-29T14:00:00"
+        }
+    ],
+    "tomorrowsMatches": [
+        {
+            "matchId": 95839,
+            "seriesId": 129908,
+            "seriesName": "IPL 2026",
+            "seriesScribeId": 129908,
+            "seriesLongName": "Indian Premier League",
+            "title": "Rajasthan Royals vs Chennai Super Kings",
+            "season": "2026",
+            "international": 0,
+            "isTournament": 0,
+            "teamId1": 629,
+            "teamName1": "Rajasthan Royals",
+            "teamLongName1": "Rajasthan Royals",
+            "teamId2": 610,
+            "teamName2": "Chennai Super Kings",
+            "teamLongName2": "Chennai Super Kings",
+            "groundId": 142,
+            "ground": "Barsapara Cricket Stadium",
+            "startDate": "2026-03-30T14:00:00"
+        }
+    ],
+    "previousMatches": [
+        {
+            "matchId": 91565,
+            "seriesId": 129684,
+            "seriesName": "NZ-W vs SA-W",
+            "seriesScribeId": 129684,
+            "seriesLongName": "South Africa Women tour of New Zealand",
+            "title": "New Zealand Women vs South Africa Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 8650,
+            "teamName1": "New Zealand Women",
+            "teamLongName1": "New Zealand Women",
+            "teamId2": 10279,
+            "teamName2": "South Africa Women",
+            "teamLongName2": "South Africa Women",
+            "groundId": 118,
+            "ground": "Hagley Oval",
+            "dataAvailable": 1,
+            "startDate": "2026-03-25T01:45:00"
+        },
+        {
+            "matchId": 95874,
+            "seriesId": 129936,
+            "seriesName": "WI-W vs AUS-W",
+            "seriesScribeId": 129936,
+            "seriesLongName": "Australia Women tour of West Indies",
+            "title": "West Indies Women vs Australia Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 10272,
+            "teamName1": "West Indies Women",
+            "teamLongName1": "West Indies Women",
+            "teamId2": 8652,
+            "teamName2": "Australia Women",
+            "teamLongName2": "Australia Women",
+            "groundId": 263,
+            "ground": "Arnos Vale Ground",
+            "dataAvailable": 1,
+            "startDate": "2026-03-23T22:30:00"
+        },
+        {
+            "matchId": 91564,
+            "seriesId": 129684,
+            "seriesName": "NZ-W vs SA-W",
+            "seriesScribeId": 129684,
+            "seriesLongName": "South Africa Women tour of New Zealand",
+            "title": "New Zealand Women vs South Africa Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 8650,
+            "teamName1": "New Zealand Women",
+            "teamLongName1": "New Zealand Women",
+            "teamId2": 10279,
+            "teamName2": "South Africa Women",
+            "teamLongName2": "South Africa Women",
+            "groundId": 171,
+            "ground": "Sky Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-03-22T01:45:00"
+        },
+        {
+            "matchId": 95873,
+            "seriesId": 129936,
+            "seriesName": "WI-W vs AUS-W",
+            "seriesScribeId": 129936,
+            "seriesLongName": "Australia Women tour of West Indies",
+            "title": "West Indies Women vs Australia Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 10272,
+            "teamName1": "West Indies Women",
+            "teamLongName1": "West Indies Women",
+            "teamId2": 8652,
+            "teamName2": "Australia Women",
+            "teamLongName2": "Australia Women",
+            "groundId": 263,
+            "ground": "Arnos Vale Ground",
+            "dataAvailable": 1,
+            "startDate": "2026-03-21T22:30:00"
+        },
+        {
+            "matchId": 91563,
+            "seriesId": 129684,
+            "seriesName": "NZ-W vs SA-W",
+            "seriesScribeId": 129684,
+            "seriesLongName": "South Africa Women tour of New Zealand",
+            "title": "New Zealand Women vs South Africa Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 8650,
+            "teamName1": "New Zealand Women",
+            "teamLongName1": "New Zealand Women",
+            "teamId2": 10279,
+            "teamName2": "South Africa Women",
+            "teamLongName2": "South Africa Women",
+            "groundId": 165,
+            "ground": "Eden Park",
+            "dataAvailable": 1,
+            "startDate": "2026-03-20T01:45:00"
+        },
+        {
+            "matchId": 95872,
+            "seriesId": 129936,
+            "seriesName": "WI-W vs AUS-W",
+            "seriesScribeId": 129936,
+            "seriesLongName": "Australia Women tour of West Indies",
+            "title": "West Indies Women vs Australia Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 10272,
+            "teamName1": "West Indies Women",
+            "teamLongName1": "West Indies Women",
+            "teamId2": 8652,
+            "teamName2": "Australia Women",
+            "teamLongName2": "Australia Women",
+            "groundId": 263,
+            "ground": "Arnos Vale Ground",
+            "dataAvailable": 1,
+            "startDate": "2026-03-19T22:30:00"
+        },
+        {
+            "matchId": 91562,
+            "seriesId": 129684,
+            "seriesName": "NZ-W vs SA-W",
+            "seriesScribeId": 129684,
+            "seriesLongName": "South Africa Women tour of New Zealand",
+            "title": "New Zealand Women vs South Africa Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 8650,
+            "teamName1": "New Zealand Women",
+            "teamLongName1": "New Zealand Women",
+            "teamId2": 10279,
+            "teamName2": "South Africa Women",
+            "teamLongName2": "South Africa Women",
+            "groundId": 123,
+            "ground": "Seddon Park",
+            "dataAvailable": 1,
+            "startDate": "2026-03-17T01:45:00"
+        },
+        {
+            "matchId": 91561,
+            "seriesId": 129684,
+            "seriesName": "NZ-W vs SA-W",
+            "seriesScribeId": 129684,
+            "seriesLongName": "South Africa Women tour of New Zealand",
+            "title": "New Zealand Women vs South Africa Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 8650,
+            "teamName1": "New Zealand Women",
+            "teamLongName1": "New Zealand Women",
+            "teamId2": 10279,
+            "teamName2": "South Africa Women",
+            "teamLongName2": "South Africa Women",
+            "groundId": 121,
+            "ground": "Bay Oval",
+            "dataAvailable": 1,
+            "startDate": "2026-03-15T01:45:00"
+        },
+        {
+            "matchId": 95131,
+            "seriesId": 129907,
+            "seriesName": "WI-W vs SL-W",
+            "seriesScribeId": 129907,
+            "seriesLongName": "Sri Lanka Women tour of West Indies",
+            "title": "West Indies Women vs Sri Lanka Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 10272,
+            "teamName1": "West Indies Women",
+            "teamLongName1": "West Indies Women",
+            "teamId2": 10277,
+            "teamName2": "Sri Lanka Women",
+            "teamLongName2": "Sri Lanka Women",
+            "groundId": 262,
+            "ground": "Grenada National Cricket Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-03-03T17:00:00"
+        },
+        {
+            "matchId": 95130,
+            "seriesId": 129907,
+            "seriesName": "WI-W vs SL-W",
+            "seriesScribeId": 129907,
+            "seriesLongName": "Sri Lanka Women tour of West Indies",
+            "title": "West Indies Women vs Sri Lanka Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 10272,
+            "teamName1": "West Indies Women",
+            "teamLongName1": "West Indies Women",
+            "teamId2": 10277,
+            "teamName2": "Sri Lanka Women",
+            "teamLongName2": "Sri Lanka Women",
+            "groundId": 262,
+            "ground": "Grenada National Cricket Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-03-01T17:00:00"
+        },
+        {
+            "matchId": 91571,
+            "seriesId": 129685,
+            "seriesName": "NZ-W vs ZIM-W",
+            "seriesScribeId": 129685,
+            "seriesLongName": "Zimbabwe Women tour of New Zealand",
+            "title": "New Zealand Women vs Zimbabwe Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 8650,
+            "teamName1": "New Zealand Women",
+            "teamLongName1": "New Zealand Women",
+            "teamId2": 14619,
+            "teamName2": "Zimbabwe Women",
+            "teamLongName2": "Zimbabwe Women",
+            "groundId": 123,
+            "ground": "Seddon Park",
+            "dataAvailable": 1,
+            "startDate": "2026-03-01T00:15:00"
+        },
+        {
+            "matchId": 95129,
+            "seriesId": 129907,
+            "seriesName": "WI-W vs SL-W",
+            "seriesScribeId": 129907,
+            "seriesLongName": "Sri Lanka Women tour of West Indies",
+            "title": "West Indies Women vs Sri Lanka Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 10272,
+            "teamName1": "West Indies Women",
+            "teamLongName1": "West Indies Women",
+            "teamId2": 10277,
+            "teamName2": "Sri Lanka Women",
+            "teamLongName2": "Sri Lanka Women",
+            "groundId": 262,
+            "ground": "Grenada National Cricket Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-02-28T17:00:00"
+        },
+        {
+            "matchId": 91570,
+            "seriesId": 129685,
+            "seriesName": "NZ-W vs ZIM-W",
+            "seriesScribeId": 129685,
+            "seriesLongName": "Zimbabwe Women tour of New Zealand",
+            "title": "New Zealand Women vs Zimbabwe Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 8650,
+            "teamName1": "New Zealand Women",
+            "teamLongName1": "New Zealand Women",
+            "teamId2": 14619,
+            "teamName2": "Zimbabwe Women",
+            "teamLongName2": "Zimbabwe Women",
+            "groundId": 123,
+            "ground": "Seddon Park",
+            "dataAvailable": 1,
+            "startDate": "2026-02-27T06:15:00"
+        },
+        {
+            "matchId": 91569,
+            "seriesId": 129685,
+            "seriesName": "NZ-W vs ZIM-W",
+            "seriesScribeId": 129685,
+            "seriesLongName": "Zimbabwe Women tour of New Zealand",
+            "title": "New Zealand Women vs Zimbabwe Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 8650,
+            "teamName1": "New Zealand Women",
+            "teamLongName1": "New Zealand Women",
+            "teamId2": 14619,
+            "teamName2": "Zimbabwe Women",
+            "teamLongName2": "Zimbabwe Women",
+            "groundId": 123,
+            "ground": "Seddon Park",
+            "dataAvailable": 1,
+            "startDate": "2026-02-25T06:15:00"
+        },
+        {
+            "matchId": 91618,
+            "seriesId": 129689,
+            "seriesName": "AUS-W vs IND-W",
+            "seriesScribeId": 129689,
+            "seriesLongName": "India Women tour of Australia",
+            "title": "Australia Women vs India Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 8652,
+            "teamName1": "Australia Women",
+            "teamLongName1": "Australia Women",
+            "teamId2": 9536,
+            "teamName2": "India Women",
+            "teamLongName2": "India Women",
+            "groundId": 105,
+            "ground": "Adelaide Oval",
+            "dataAvailable": 1,
+            "startDate": "2026-02-21T08:15:00"
+        },
+        {
+            "matchId": 91617,
+            "seriesId": 129689,
+            "seriesName": "AUS-W vs IND-W",
+            "seriesScribeId": 129689,
+            "seriesLongName": "India Women tour of Australia",
+            "title": "Australia Women vs India Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 8652,
+            "teamName1": "Australia Women",
+            "teamLongName1": "Australia Women",
+            "teamId2": 9536,
+            "teamName2": "India Women",
+            "teamLongName2": "India Women",
+            "groundId": 117,
+            "ground": "Manuka Oval",
+            "dataAvailable": 1,
+            "startDate": "2026-02-19T08:15:00"
+        },
+        {
+            "matchId": 91612,
+            "seriesId": 129688,
+            "seriesName": "SA-W vs PAK-W",
+            "seriesScribeId": 129688,
+            "seriesLongName": "Pakistan Women tour of South Africa",
+            "title": "South Africa Women vs Pakistan Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 10279,
+            "teamName1": "South Africa Women",
+            "teamLongName1": "South Africa Women",
+            "teamId2": 10259,
+            "teamName2": "Pakistan Women",
+            "teamLongName2": "Pakistan Women",
+            "groundId": 78,
+            "ground": "Diamond Oval",
+            "dataAvailable": 1,
+            "startDate": "2026-02-16T16:00:00"
+        },
+        {
+            "matchId": 91616,
+            "seriesId": 129689,
+            "seriesName": "AUS-W vs IND-W",
+            "seriesScribeId": 129689,
+            "seriesLongName": "India Women tour of Australia",
+            "title": "Australia Women vs India Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 8652,
+            "teamName1": "Australia Women",
+            "teamLongName1": "Australia Women",
+            "teamId2": 9536,
+            "teamName2": "India Women",
+            "teamLongName2": "India Women",
+            "groundId": 108,
+            "ground": "Sydney Cricket Ground",
+            "dataAvailable": 1,
+            "startDate": "2026-02-15T08:15:00"
+        },
+        {
+            "matchId": 91611,
+            "seriesId": 129688,
+            "seriesName": "SA-W vs PAK-W",
+            "seriesScribeId": 129688,
+            "seriesLongName": "Pakistan Women tour of South Africa",
+            "title": "South Africa Women vs Pakistan Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 10279,
+            "teamName1": "South Africa Women",
+            "teamLongName1": "South Africa Women",
+            "teamId2": 10259,
+            "teamName2": "Pakistan Women",
+            "teamLongName2": "Pakistan Women",
+            "groundId": 65,
+            "ground": "Willowmoore Park",
+            "dataAvailable": 1,
+            "startDate": "2026-02-13T16:00:00"
+        },
+        {
+            "matchId": 91610,
+            "seriesId": 129688,
+            "seriesName": "SA-W vs PAK-W",
+            "seriesScribeId": 129688,
+            "seriesLongName": "Pakistan Women tour of South Africa",
+            "title": "South Africa Women vs Pakistan Women",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 10279,
+            "teamName1": "South Africa Women",
+            "teamLongName1": "South Africa Women",
+            "teamId2": 10259,
+            "teamName2": "Pakistan Women",
+            "teamLongName2": "Pakistan Women",
+            "groundId": 66,
+            "ground": "Senwes Park",
+            "dataAvailable": 1,
+            "startDate": "2026-02-10T16:00:00"
+        },
+        {
+            "matchId": 95837,
+            "seriesId": 129908,
+            "seriesName": "IPL 2026",
+            "seriesScribeId": 129908,
+            "seriesLongName": "Indian Premier League",
+            "title": "Royal Challengers Bengaluru vs Sunrisers Hyderabad",
+            "season": "2026",
+            "international": 0,
+            "isTournament": 0,
+            "teamId1": 646,
+            "teamName1": "Royal Challengers Bengaluru",
+            "teamLongName1": "Royal Challengers Bengaluru",
+            "teamId2": 658,
+            "teamName2": "Sunrisers Hyderabad",
+            "teamLongName2": "Sunrisers Hyderabad",
+            "groundId": 20,
+            "ground": "M.Chinnaswamy Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-03-28T14:00:00"
+        },
+        {
+            "matchId": 95780,
+            "seriesId": 129937,
+            "seriesName": "PSL 2026",
+            "seriesScribeId": 129937,
+            "seriesLongName": "Pakistan Super League",
+            "title": "Multan Sultans vs Islamabad United",
+            "season": "2026",
+            "international": 0,
+            "isTournament": 0,
+            "teamId1": 108678,
+            "teamName1": "Multan Sultans",
+            "teamLongName1": "Multan Sultans",
+            "teamId2": 14464,
+            "teamName2": "Islamabad United",
+            "teamLongName2": "Islamabad United",
+            "groundId": 164,
+            "ground": "Gaddafi Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-03-28T14:00:00"
+        },
+        {
+            "matchId": 95779,
+            "seriesId": 129937,
+            "seriesName": "PSL 2026",
+            "seriesScribeId": 129937,
+            "seriesLongName": "Pakistan Super League",
+            "title": "Peshawar Zalmi vs Rawalpindi Pindiz",
+            "season": "2026",
+            "international": 0,
+            "isTournament": 0,
+            "teamId1": 14467,
+            "teamName1": "Peshawar Zalmi",
+            "teamLongName1": "Peshawar Zalmi",
+            "teamId2": 129283,
+            "teamName2": "Rawalpindi Pindiz",
+            "teamLongName2": "Rawalpindi Pindiz",
+            "groundId": 164,
+            "ground": "Gaddafi Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-03-28T09:30:00"
+        },
+        {
+            "matchId": 95778,
+            "seriesId": 129937,
+            "seriesName": "PSL 2026",
+            "seriesScribeId": 129937,
+            "seriesLongName": "Pakistan Super League",
+            "title": "Quetta Gladiators vs Karachi Kings",
+            "season": "2026",
+            "international": 0,
+            "isTournament": 0,
+            "teamId1": 14465,
+            "teamName1": "Quetta Gladiators",
+            "teamLongName1": "Quetta Gladiators",
+            "teamId2": 14469,
+            "teamName2": "Karachi Kings",
+            "teamLongName2": "Karachi Kings",
+            "groundId": 164,
+            "ground": "Gaddafi Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-03-27T14:00:00"
+        },
+        {
+            "matchId": 95777,
+            "seriesId": 129937,
+            "seriesName": "PSL 2026",
+            "seriesScribeId": 129937,
+            "seriesLongName": "Pakistan Super League",
+            "title": "Lahore Qalandars vs Hyderabad Kingsmen",
+            "season": "2026",
+            "international": 0,
+            "isTournament": 0,
+            "teamId1": 14470,
+            "teamName1": "Lahore Qalandars",
+            "teamLongName1": "Lahore Qalandars",
+            "teamId2": 129282,
+            "teamName2": "Hyderabad Kingsmen",
+            "teamLongName2": "Hyderabad Kingsmen",
+            "groundId": 164,
+            "ground": "Gaddafi Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-03-26T14:00:00"
+        },
+        {
+            "matchId": 91560,
+            "seriesId": 129683,
+            "seriesName": "NZ vs SA",
+            "seriesScribeId": 129683,
+            "seriesLongName": "South Africa tour of New Zealand",
+            "title": "New Zealand vs South Africa",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 7,
+            "teamName1": "New Zealand",
+            "teamLongName1": "New Zealand",
+            "teamId2": 19,
+            "teamName2": "South Africa",
+            "teamLongName2": "South Africa",
+            "groundId": 118,
+            "ground": "Hagley Oval",
+            "dataAvailable": 1,
+            "startDate": "2026-03-25T06:15:00"
+        },
+        {
+            "matchId": 91559,
+            "seriesId": 129683,
+            "seriesName": "NZ vs SA",
+            "seriesScribeId": 129683,
+            "seriesLongName": "South Africa tour of New Zealand",
+            "title": "New Zealand vs South Africa",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 7,
+            "teamName1": "New Zealand",
+            "teamLongName1": "New Zealand",
+            "teamId2": 19,
+            "teamName2": "South Africa",
+            "teamLongName2": "South Africa",
+            "groundId": 171,
+            "ground": "Sky Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-03-22T06:15:00"
+        },
+        {
+            "matchId": 91558,
+            "seriesId": 129683,
+            "seriesName": "NZ vs SA",
+            "seriesScribeId": 129683,
+            "seriesLongName": "South Africa tour of New Zealand",
+            "title": "New Zealand vs South Africa",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 7,
+            "teamName1": "New Zealand",
+            "teamLongName1": "New Zealand",
+            "teamId2": 19,
+            "teamName2": "South Africa",
+            "teamLongName2": "South Africa",
+            "groundId": 165,
+            "ground": "Eden Park",
+            "dataAvailable": 1,
+            "startDate": "2026-03-20T06:15:00"
+        },
+        {
+            "matchId": 91557,
+            "seriesId": 129683,
+            "seriesName": "NZ vs SA",
+            "seriesScribeId": 129683,
+            "seriesLongName": "South Africa tour of New Zealand",
+            "title": "New Zealand vs South Africa",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 7,
+            "teamName1": "New Zealand",
+            "teamLongName1": "New Zealand",
+            "teamId2": 19,
+            "teamName2": "South Africa",
+            "teamLongName2": "South Africa",
+            "groundId": 123,
+            "ground": "Seddon Park",
+            "dataAvailable": 1,
+            "startDate": "2026-03-17T06:15:00"
+        },
+        {
+            "matchId": 91556,
+            "seriesId": 129683,
+            "seriesName": "NZ vs SA",
+            "seriesScribeId": 129683,
+            "seriesLongName": "South Africa tour of New Zealand",
+            "title": "New Zealand vs South Africa",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 7,
+            "teamName1": "New Zealand",
+            "teamLongName1": "New Zealand",
+            "teamId2": 19,
+            "teamName2": "South Africa",
+            "teamLongName2": "South Africa",
+            "groundId": 121,
+            "ground": "Bay Oval",
+            "dataAvailable": 1,
+            "startDate": "2026-03-15T06:15:00"
+        },
+        {
+            "matchId": 94723,
+            "seriesId": 129881,
+            "seriesName": "ICCT20WC 2026",
+            "seriesScribeId": 129881,
+            "seriesLongName": "ICC Men's T20 World Cup",
+            "title": "India vs New Zealand",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 25,
+            "teamName1": "India",
+            "teamLongName1": "India",
+            "teamId2": 7,
+            "teamName2": "New Zealand",
+            "teamLongName2": "New Zealand",
+            "groundId": 332,
+            "ground": "Narendra Modi Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-03-08T13:30:00"
+        },
+        {
+            "matchId": 94722,
+            "seriesId": 129881,
+            "seriesName": "ICCT20WC 2026",
+            "seriesScribeId": 129881,
+            "seriesLongName": "ICC Men's T20 World Cup",
+            "title": "India vs England",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 25,
+            "teamName1": "India",
+            "teamLongName1": "India",
+            "teamId2": 490,
+            "teamName2": "England",
+            "teamLongName2": "England",
+            "groundId": 17,
+            "ground": "Wankhede Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-03-05T13:30:00"
+        },
+        {
+            "matchId": 94721,
+            "seriesId": 129881,
+            "seriesName": "ICCT20WC 2026",
+            "seriesScribeId": 129881,
+            "seriesLongName": "ICC Men's T20 World Cup",
+            "title": "South Africa vs New Zealand",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 19,
+            "teamName1": "South Africa",
+            "teamLongName1": "South Africa",
+            "teamId2": 7,
+            "teamName2": "New Zealand",
+            "teamLongName2": "New Zealand",
+            "groundId": 18,
+            "ground": "Eden Gardens",
+            "dataAvailable": 1,
+            "startDate": "2026-03-04T13:30:00"
+        },
+        {
+            "matchId": 94720,
+            "seriesId": 129881,
+            "seriesName": "ICCT20WC 2026",
+            "seriesScribeId": 129881,
+            "seriesLongName": "ICC Men's T20 World Cup",
+            "title": "India vs West Indies",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 25,
+            "teamName1": "India",
+            "teamLongName1": "India",
+            "teamId2": 17,
+            "teamName2": "West Indies",
+            "teamLongName2": "West Indies",
+            "groundId": 18,
+            "ground": "Eden Gardens",
+            "dataAvailable": 1,
+            "startDate": "2026-03-01T13:30:00"
+        },
+        {
+            "matchId": 94719,
+            "seriesId": 129881,
+            "seriesName": "ICCT20WC 2026",
+            "seriesScribeId": 129881,
+            "seriesLongName": "ICC Men's T20 World Cup",
+            "title": "Zimbabwe vs South Africa",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 493,
+            "teamName1": "Zimbabwe",
+            "teamLongName1": "Zimbabwe",
+            "teamId2": 19,
+            "teamName2": "South Africa",
+            "teamLongName2": "South Africa",
+            "groundId": 22,
+            "ground": "Arun Jaitley Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-03-01T09:30:00"
+        },
+        {
+            "matchId": 94718,
+            "seriesId": 129881,
+            "seriesName": "ICCT20WC 2026",
+            "seriesScribeId": 129881,
+            "seriesLongName": "ICC Men's T20 World Cup",
+            "title": "Pakistan vs Sri Lanka",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 13,
+            "teamName1": "Pakistan",
+            "teamLongName1": "Pakistan",
+            "teamId2": 21,
+            "teamName2": "Sri Lanka",
+            "teamLongName2": "Sri Lanka",
+            "groundId": 82,
+            "ground": "Pallekele International Cricket Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-02-28T13:30:00"
+        },
+        {
+            "matchId": 94717,
+            "seriesId": 129881,
+            "seriesName": "ICCT20WC 2026",
+            "seriesScribeId": 129881,
+            "seriesLongName": "ICC Men's T20 World Cup",
+            "title": "England vs New Zealand",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 490,
+            "teamName1": "England",
+            "teamLongName1": "England",
+            "teamId2": 7,
+            "teamName2": "New Zealand",
+            "teamLongName2": "New Zealand",
+            "groundId": 80,
+            "ground": "R.Premadasa Stadium, Khettarama",
+            "dataAvailable": 1,
+            "startDate": "2026-02-27T13:30:00"
+        },
+        {
+            "matchId": 94716,
+            "seriesId": 129881,
+            "seriesName": "ICCT20WC 2026",
+            "seriesScribeId": 129881,
+            "seriesLongName": "ICC Men's T20 World Cup",
+            "title": "India vs Zimbabwe",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 25,
+            "teamName1": "India",
+            "teamLongName1": "India",
+            "teamId2": 493,
+            "teamName2": "Zimbabwe",
+            "teamLongName2": "Zimbabwe",
+            "groundId": 51,
+            "ground": "MA Chidambaram Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-02-26T13:30:00"
+        },
+        {
+            "matchId": 94715,
+            "seriesId": 129881,
+            "seriesName": "ICCT20WC 2026",
+            "seriesScribeId": 129881,
+            "seriesLongName": "ICC Men's T20 World Cup",
+            "title": "West Indies vs South Africa",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 17,
+            "teamName1": "West Indies",
+            "teamLongName1": "West Indies",
+            "teamId2": 19,
+            "teamName2": "South Africa",
+            "teamLongName2": "South Africa",
+            "groundId": 332,
+            "ground": "Narendra Modi Stadium",
+            "dataAvailable": 1,
+            "startDate": "2026-02-26T09:30:00"
+        },
+        {
+            "matchId": 94714,
+            "seriesId": 129881,
+            "seriesName": "ICCT20WC 2026",
+            "seriesScribeId": 129881,
+            "seriesLongName": "ICC Men's T20 World Cup",
+            "title": "New Zealand vs Sri Lanka",
+            "season": "2026",
+            "international": 1,
+            "isTournament": 0,
+            "teamId1": 7,
+            "teamName1": "New Zealand",
+            "teamLongName1": "New Zealand",
+            "teamId2": 21,
+            "teamName2": "Sri Lanka",
+            "teamLongName2": "Sri Lanka",
+            "groundId": 80,
+            "ground": "R.Premadasa Stadium, Khettarama",
+            "dataAvailable": 1,
+            "startDate": "2026-02-25T13:30:00"
+        }
+    ]
+}

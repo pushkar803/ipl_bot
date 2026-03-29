@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block title %}Cricket Predictor — Today & Tomorrow{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<div class="text-center mb-10 fade-in">
+  <h1 class="text-4xl font-extrabold mb-2">Match Predictions</h1>
+  <p class="text-base-content/60 text-lg">Pick a match to see detailed stats, player probabilities & AI analysis</p>
+  {% if data_date %}
+  <div class="badge badge-outline badge-lg mt-3 gap-1">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+    {{ data_date }}
+  </div>
+  {% endif %}
+</div>
+
+<!-- Today's Matches -->
+{% if today %}
+<section class="mb-12 fade-in">
+  <div class="flex items-center gap-3 mb-6">
+    <h2 class="text-2xl font-bold">Today's Matches</h2>
+    <div class="badge badge-primary">{{ today|length }} match{{ 'es' if today|length > 1 }}</div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+    {% for m in today %}
+    <a href="/predict/{{ m.match_id }}" class="card bg-base-200 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-200 cursor-pointer group">
+      <div class="card-body p-6">
+        <!-- Series badge -->
+        <div class="flex justify-between items-center mb-4">
+          <div class="badge badge-accent badge-sm">{{ m.series_name }}</div>
+          <div class="text-xs text-base-content/50">{{ m.start_date[11:16] }} IST</div>
+        </div>
+
+        <!-- Teams -->
+        <div class="flex items-center justify-between gap-4">
+          <div class="flex flex-col items-center gap-2 flex-1">
+            <div class="team-badge" style="background:{{ m.team1_meta.bg }}; color:{{ m.team1_meta.text }}">
+              {{ m.team1_meta.abbr }}
+            </div>
+            <span class="text-sm font-semibold text-center leading-tight">{{ m.team_name1 }}</span>
+          </div>
+
+          <div class="text-2xl font-black text-base-content/30">VS</div>
+
+          <div class="flex flex-col items-center gap-2 flex-1">
+            <div class="team-badge" style="background:{{ m.team2_meta.bg }}; color:{{ m.team2_meta.text }}">
+              {{ m.team2_meta.abbr }}
+            </div>
+            <span class="text-sm font-semibold text-center leading-tight">{{ m.team_name2 }}</span>
+          </div>
+        </div>
+
+        <!-- Venue -->
+        <div class="flex items-center gap-2 mt-4 text-sm text-base-content/60">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          {{ m.ground }}
+        </div>
+
+        <!-- CTA -->
+        <div class="card-actions justify-end mt-4">
+          <div class="btn btn-primary btn-sm group-hover:btn-wide transition-all">View Prediction →</div>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<!-- Tomorrow's Matches -->
+{% if tomorrow %}
+<section class="mb-12 fade-in">
+  <div class="flex items-center gap-3 mb-6">
+    <h2 class="text-2xl font-bold">Tomorrow's Matches</h2>
+    <div class="badge badge-secondary">{{ tomorrow|length }} match{{ 'es' if tomorrow|length > 1 }}</div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+    {% for m in tomorrow %}
+    <a href="/predict/{{ m.match_id }}" class="card bg-base-200 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-200 cursor-pointer group">
+      <div class="card-body p-6">
+        <div class="flex justify-between items-center mb-4">
+          <div class="badge badge-accent badge-sm">{{ m.series_name }}</div>
+          <div class="text-xs text-base-content/50">{{ m.start_date[11:16] }} IST</div>
+        </div>
+
+        <div class="flex items-center justify-between gap-4">
+          <div class="flex flex-col items-center gap-2 flex-1">
+            <div class="team-badge" style="background:{{ m.team1_meta.bg }}; color:{{ m.team1_meta.text }}">
+              {{ m.team1_meta.abbr }}
+            </div>
+            <span class="text-sm font-semibold text-center leading-tight">{{ m.team_name1 }}</span>
+          </div>
+          <div class="text-2xl font-black text-base-content/30">VS</div>
+          <div class="flex flex-col items-center gap-2 flex-1">
+            <div class="team-badge" style="background:{{ m.team2_meta.bg }}; color:{{ m.team2_meta.text }}">
+              {{ m.team2_meta.abbr }}
+            </div>
+            <span class="text-sm font-semibold text-center leading-tight">{{ m.team_name2 }}</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 mt-4 text-sm text-base-content/60">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          {{ m.ground }}
+        </div>
+
+        <div class="card-actions justify-end mt-4">
+          <div class="btn btn-secondary btn-sm group-hover:btn-wide transition-all">View Prediction →</div>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if not today and not tomorrow %}
+<div class="alert alert-warning max-w-lg mx-auto">
+  <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+  <span>No upcoming matches found. Check back later!</span>
+</div>
+{% endif %}
+
+{% endblock %}
