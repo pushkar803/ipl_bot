@@ -8,5 +8,4 @@ __pycache__
 node_modules
 .cursor
 curl requests
-agent-transcripts
 *.md
