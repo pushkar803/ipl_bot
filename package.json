@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i static/src/input.css -o static/css/style.min.css --minify",
+    "watch:css": "tailwindcss -i static/src/input.css -o static/css/style.min.css --watch",
+    "build": "npm run build:css"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "daisyui": "^4.12.0"
+  }
+}

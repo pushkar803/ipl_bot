@@ -2,17 +2,61 @@
 """Flask web server for Cricket Match Prediction Engine."""
 
 import markdown
+import requests as req_lib
 
 from flask import Flask, render_template, redirect, url_for, jsonify
 
 import db
-from config import OPENAI_API_KEY
+from config import OPENAI_API_KEY, SPODA_AUTH_COOKIE, BASE_URL, HEADERS, COOKIES, SECRET_KEY, FLASK_DEBUG
 from api_client import SpodaAPI
 from analyzer import get_ai_analysis
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = SECRET_KEY
+app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0 if FLASK_DEBUG else 31536000
 db.init_db()
 api = SpodaAPI()
+
+
+def validate_spoda_connection() -> dict:
+    """Check if the Spoda auth cookie is set and the API responds."""
+    if not SPODA_AUTH_COOKIE:
+        return {"ok": False, "error": "SPODA_AUTH_COOKIE is not set in your .env file."}
+
+    try:
+        resp = req_lib.get(
+            f"{BASE_URL}/match-overview/matches",
+            headers=HEADERS,
+            cookies=COOKIES,
+            timeout=15,
+        )
+        if resp.status_code == 401:
+            return {"ok": False, "error": "Spoda auth cookie is expired or invalid (401 Unauthorized)."}
+        if resp.status_code == 403:
+            return {"ok": False, "error": "Spoda auth cookie was rejected (403 Forbidden)."}
+        resp.raise_for_status()
+        data = resp.json()
+        if data.get("code") != 200:
+            return {"ok": False, "error": f"Spoda API returned error code {data.get('code')}: {data.get('message', 'Unknown error')}"}
+        return {"ok": True, "error": None}
+    except req_lib.ConnectionError:
+        return {"ok": False, "error": "Cannot connect to api.spoda.ai. Check your internet connection."}
+    except req_lib.Timeout:
+        return {"ok": False, "error": "Connection to api.spoda.ai timed out."}
+    except Exception as e:
+        return {"ok": False, "error": f"Spoda connection check failed: {e}"}
+
+
+_spoda_status = validate_spoda_connection()
+
+
+@app.context_processor
+def inject_status():
+    return {
+        "spoda_ok": _spoda_status["ok"],
+        "spoda_error": _spoda_status["error"],
+        "openai_available": bool(OPENAI_API_KEY),
+    }
 
 TEAM_COLORS = {
     "Mumbai Indians": {"bg": "#004BA0", "text": "#fff", "abbr": "MI"},
@@ -57,7 +101,16 @@ def build_match(raw: dict) -> dict:
 
 @app.route("/")
 def index():
-    data = api.get_matches()
+    if not _spoda_status["ok"]:
+        return render_template("index.html", today=[], tomorrow=[], data_date="")
+
+    try:
+        data = api.get_matches()
+    except Exception as e:
+        _spoda_status["ok"] = False
+        _spoda_status["error"] = f"Failed to fetch matches: {e}"
+        return render_template("index.html", today=[], tomorrow=[], data_date="")
+
     today = [build_match(m) for m in data.get("todaysMatches", [])]
     tomorrow = [build_match(m) for m in data.get("tomorrowsMatches", [])]
     return render_template(
@@ -70,7 +123,16 @@ def index():
 
 @app.route("/predict/<int:match_id>")
 def predict(match_id: int):
-    data = api.get_matches()
+    if not _spoda_status["ok"]:
+        return render_template("error.html", title="Spoda Connection Error",
+                               message=_spoda_status["error"])
+
+    try:
+        data = api.get_matches()
+    except Exception as e:
+        return render_template("error.html", title="API Error",
+                               message=f"Failed to fetch match data: {e}")
+
     all_matches = data.get("todaysMatches", []) + data.get("tomorrowsMatches", [])
     raw = next((m for m in all_matches if m["matchId"] == match_id), None)
 
@@ -331,6 +393,15 @@ def _extract_boundary_pct(team_analysis):
     return []
 
 
+@app.route("/api/recheck-spoda", methods=["POST"])
+def recheck_spoda():
+    global _spoda_status
+    _spoda_status = validate_spoda_connection()
+    if _spoda_status["ok"]:
+        return '<script>window.location.href="/";</script>'
+    return render_template("partials/spoda_error_banner.html")
+
+
 if __name__ == "__main__":
     print("\n  Cricket Prediction Engine -> http://localhost:5050\n")
-    app.run(debug=True, port=5050)
+    app.run(debug=FLASK_DEBUG, port=5050)

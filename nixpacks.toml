@@ -1,0 +1,14 @@
+[phases.setup]
+nixPkgs = ["nodejs-18_x", "python312"]
+
+[phases.install]
+cmds = [
+    "npm ci",
+    "pip install -r requirements.txt",
+]
+
+[phases.build]
+cmds = ["npm run build:css"]
+
+[start]
+cmd = "gunicorn web:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120"

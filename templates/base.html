@@ -4,27 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Cricket Predictor{% endblock %}</title>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/htmx.org@2.0.4"></script>
-  <style>
-    .prob-bar { transition: width 1s ease-in-out; }
-    .fade-in { animation: fadeIn .4s ease-in; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-    .team-badge { display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 9999px; font-weight: 700; font-size: .875rem; flex-shrink: 0; }
-    .team-badge-lg { width: 4.5rem; height: 4.5rem; font-size: 1.25rem; }
-    .stat-highlight { background: linear-gradient(135deg, oklch(var(--b2)) 0%, oklch(var(--b3)) 100%); }
-
-    /* AI analysis prose styling */
-    .ai-prose p { margin-bottom: .5rem; }
-    .ai-prose p:last-child { margin-bottom: 0; }
-    .ai-prose strong { color: oklch(var(--bc)); font-weight: 700; }
-    .ai-prose ul { list-style: none; padding: 0; margin: .5rem 0; display: flex; flex-direction: column; gap: .4rem; }
-    .ai-prose ul li { position: relative; padding-left: 1.4rem; }
-    .ai-prose ul li::before { content: '▸'; position: absolute; left: 0; color: oklch(var(--s)); font-weight: 700; }
-    .ai-prose ol { padding-left: 1.5rem; margin: .5rem 0; }
-    .ai-prose ol li { margin-bottom: .25rem; }
-  </style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.min.css') }}">
+  <script src="{{ url_for('static', filename='js/htmx.min.js') }}" defer></script>
 </head>
 <body class="min-h-screen bg-base-100">
 
@@ -36,9 +17,31 @@
         <span class="font-bold">Cricket Predictor</span>
       </a>
     </div>
-    <div class="navbar-end">
+    <div class="navbar-end gap-2">
+      {% if spoda_ok %}
+      <div class="tooltip tooltip-bottom" data-tip="Spoda API connected">
+        <div class="badge badge-success gap-1">
+          <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-success"></span></span>
+          API
+        </div>
+      </div>
+      {% else %}
+      <div class="tooltip tooltip-bottom" data-tip="{{ spoda_error or 'Spoda API disconnected' }}">
+        <div class="badge badge-error gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          API
+        </div>
+      </div>
+      {% endif %}
       {% block nav_extra %}{% endblock %}
     </div>
+  </div>
+
+  <!-- Spoda Error Banner -->
+  <div id="spoda-banner">
+  {% if not spoda_ok %}
+  {% include "partials/spoda_error_banner.html" %}
+  {% endif %}
   </div>
 
   <!-- Content -->

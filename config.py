@@ -1,7 +1,12 @@
 import os
+import secrets
 from dotenv import load_dotenv
 
 load_dotenv()
+
+FLASK_ENV = os.getenv("FLASK_ENV", "production")
+FLASK_DEBUG = FLASK_ENV == "development"
+SECRET_KEY = os.getenv("SECRET_KEY", secrets.token_hex(32))
 
 BASE_URL = "https://api.spoda.ai"
 

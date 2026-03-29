@@ -1,0 +1,18 @@
+<div class="alert alert-error shadow-lg mx-auto max-w-7xl mt-2 px-4 fade-in" role="alert">
+  <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <div>
+    <h3 class="font-bold">Spoda API Connection Error</h3>
+    <p class="text-sm">{{ spoda_error or "Unable to connect to Spoda API. Check your auth cookie." }}</p>
+  </div>
+  <button class="btn btn-sm btn-outline"
+          hx-post="/api/recheck-spoda"
+          hx-target="#spoda-banner"
+          hx-swap="innerHTML"
+          hx-indicator="#recheck-spinner">
+    <span id="recheck-spinner" class="loading loading-spinner loading-xs htmx-indicator"></span>
+    Retry
+  </button>
+</div>

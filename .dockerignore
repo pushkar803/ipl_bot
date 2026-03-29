@@ -1,0 +1,12 @@
+.env
+.git
+.venv
+venv
+__pycache__
+*.pyc
+*.db
+node_modules
+.cursor
+curl requests
+agent-transcripts
+*.md

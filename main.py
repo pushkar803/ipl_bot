@@ -8,7 +8,7 @@ from rich.prompt import Prompt, Confirm
 from rich.progress import Progress, SpinnerColumn, TextColumn
 
 import db
-from config import OPENAI_API_KEY
+from config import OPENAI_API_KEY, SPODA_AUTH_COOKIE, BASE_URL, HEADERS, COOKIES
 from api_client import SpodaAPI
 from display import (
     print_banner,
@@ -20,6 +20,43 @@ from display import (
 from analyzer import get_ai_analysis
 
 _openai_available = False
+
+
+def check_spoda_cookie() -> bool:
+    if not SPODA_AUTH_COOKIE:
+        console.print("  [red]SPODA_AUTH_COOKIE is not set in .env — cannot fetch data.[/red]")
+        return False
+
+    try:
+        import requests
+        resp = requests.get(
+            f"{BASE_URL}/match-overview/matches",
+            headers=HEADERS,
+            cookies=COOKIES,
+            timeout=15,
+        )
+        if resp.status_code == 401:
+            console.print("  [red]Spoda auth cookie is expired or invalid (401). Please update .env.[/red]")
+            return False
+        if resp.status_code == 403:
+            console.print("  [red]Spoda auth cookie was rejected (403). Please update .env.[/red]")
+            return False
+        resp.raise_for_status()
+        data = resp.json()
+        if data.get("code") != 200:
+            console.print(f"  [red]Spoda API error: {data.get('message', 'Unknown')}[/red]")
+            return False
+        console.print("  [green]Spoda API connection validated.[/green]")
+        return True
+    except requests.ConnectionError:
+        console.print("  [red]Cannot connect to api.spoda.ai — check your internet.[/red]")
+        return False
+    except requests.Timeout:
+        console.print("  [red]Connection to api.spoda.ai timed out.[/red]")
+        return False
+    except Exception as e:
+        console.print(f"  [red]Spoda check failed: {e}[/red]")
+        return False
 
 
 def check_openai_key() -> bool:
@@ -153,6 +190,13 @@ def main():
     api = SpodaAPI()
 
     print_banner()
+
+    with Progress(SpinnerColumn(), TextColumn("[bold cyan]Validating Spoda connection…"), console=console, transient=True):
+        spoda_ok = check_spoda_cookie()
+    if not spoda_ok:
+        console.print("\n  [bold red]Cannot proceed without a valid Spoda connection.[/bold red]")
+        console.print("  [dim]Update SPODA_AUTH_COOKIE in your .env file and try again.[/dim]\n")
+        return
 
     with Progress(SpinnerColumn(), TextColumn("[bold cyan]Validating OpenAI key…"), console=console, transient=True):
         _openai_available = check_openai_key()

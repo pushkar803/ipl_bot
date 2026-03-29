@@ -118,10 +118,47 @@
 {% endif %}
 
 {% if not today and not tomorrow %}
-<div class="alert alert-warning max-w-lg mx-auto">
-  <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
-  <span>No upcoming matches found. Check back later!</span>
-</div>
+  {% if not spoda_ok %}
+  <div class="flex flex-col items-center justify-center py-16 fade-in">
+    <div class="card bg-base-200 shadow-xl max-w-lg w-full">
+      <div class="card-body items-center text-center">
+        <div class="text-5xl mb-3">🔌</div>
+        <h2 class="card-title text-error">Unable to Load Matches</h2>
+        <p class="text-base-content/60 text-sm mt-1">{{ spoda_error }}</p>
+        <div class="divider text-xs text-base-content/40">Troubleshooting</div>
+        <ul class="text-left text-sm space-y-2 text-base-content/70 w-full">
+          <li class="flex items-start gap-2">
+            <span class="text-error mt-0.5">1.</span>
+            Check that <code class="kbd kbd-xs">SPODA_AUTH_COOKIE</code> is set in your <code class="kbd kbd-xs">.env</code> file
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-error mt-0.5">2.</span>
+            Make sure your auth cookie hasn't expired — re-login on <a href="https://www.spoda.ai" target="_blank" class="link link-primary">spoda.ai</a> to get a fresh one
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-error mt-0.5">3.</span>
+            Verify your internet connection is active
+          </li>
+        </ul>
+        <div class="card-actions mt-6">
+          <button class="btn btn-primary gap-2"
+                  hx-post="/api/recheck-spoda"
+                  hx-target="#spoda-banner"
+                  hx-swap="innerHTML"
+                  onclick="setTimeout(() => window.location.reload(), 2000)">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+            Retry Connection
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="alert alert-warning max-w-lg mx-auto">
+    <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+    <span>No upcoming matches found. Check back later!</span>
+  </div>
+  {% endif %}
 {% endif %}
 
 {% endblock %}
