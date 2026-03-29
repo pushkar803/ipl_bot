@@ -312,28 +312,23 @@
           <!-- Team Selector -->
           <div class="form-control">
             <label class="label"><span class="label-text font-semibold">Who bats first?</span></label>
-            <div class="flex gap-2">
-              <label class="flex-1 cursor-pointer">
-                <input type="radio" name="sim-team" value="{{ match.team_id1 }}" class="peer hidden" id="sim-team1" checked
-                       onchange="simUpdate()">
-                <div class="btn btn-outline btn-block peer-checked:btn-primary peer-checked:text-primary-content gap-2 transition-all">
-                  <div class="team-badge" style="background:{{ match.team1_meta.bg }}; color:{{ match.team1_meta.text }}; width:1.5rem; height:1.5rem; font-size:.6rem;">
-                    {{ match.team1_meta.abbr }}
-                  </div>
-                  {{ match.team_name1 }}
+            <div class="join w-full">
+              <button type="button" id="sim-btn-t1" class="join-item btn btn-primary flex-1 gap-2"
+                      data-team-id="{{ match.team_id1 }}" onclick="simSelectTeam(this)">
+                <div class="team-badge" style="background:{{ match.team1_meta.bg }}; color:{{ match.team1_meta.text }}; width:1.5rem; height:1.5rem; font-size:.6rem;">
+                  {{ match.team1_meta.abbr }}
                 </div>
-              </label>
-              <label class="flex-1 cursor-pointer">
-                <input type="radio" name="sim-team" value="{{ match.team_id2 }}" class="peer hidden" id="sim-team2"
-                       onchange="simUpdate()">
-                <div class="btn btn-outline btn-block peer-checked:btn-primary peer-checked:text-primary-content gap-2 transition-all">
-                  <div class="team-badge" style="background:{{ match.team2_meta.bg }}; color:{{ match.team2_meta.text }}; width:1.5rem; height:1.5rem; font-size:.6rem;">
-                    {{ match.team2_meta.abbr }}
-                  </div>
-                  {{ match.team_name2 }}
+                {{ match.team_name1 }}
+              </button>
+              <button type="button" id="sim-btn-t2" class="join-item btn btn-outline flex-1 gap-2"
+                      data-team-id="{{ match.team_id2 }}" onclick="simSelectTeam(this)">
+                <div class="team-badge" style="background:{{ match.team2_meta.bg }}; color:{{ match.team2_meta.text }}; width:1.5rem; height:1.5rem; font-size:.6rem;">
+                  {{ match.team2_meta.abbr }}
                 </div>
-              </label>
+                {{ match.team_name2 }}
+              </button>
             </div>
+            <input type="hidden" id="sim-team" value="{{ match.team_id1 }}">
           </div>
 
           <!-- First Innings Score -->
@@ -380,7 +375,7 @@
         </div>
 
         <!-- Result Panel -->
-        <div class="flex flex-col items-center justify-center bg-base-300/50 rounded-box p-6 min-h-[12rem] relative">
+        <div class="flex flex-col items-center justify-center bg-base-300/50 rounded-box p-6 relative" style="min-height:12rem">
           <div id="sim-result">
             <div class="flex flex-col items-center gap-3">
               <div class="radial-progress text-base-content/20 text-2xl font-black"
@@ -390,7 +385,7 @@
               <p class="text-xs text-base-content/40">Adjust sliders to simulate</p>
             </div>
           </div>
-          <div id="sim-spinner" class="htmx-indicator absolute inset-0 flex items-center justify-center bg-base-300/80 rounded-box">
+          <div id="sim-spinner" class="htmx-indicator absolute inset-0 flex items-center justify-center rounded-box" style="background:oklch(var(--b3)/.8)">
             <span class="loading loading-ring loading-lg text-primary"></span>
           </div>
         </div>
@@ -400,15 +395,31 @@
   </div>
 
   <script>
-    let simTimer = null;
+    var simSelectedTeam = '{{ match.team_id1 }}';
+    var simTimer = null;
+
+    function simSelectTeam(btn) {
+      simSelectedTeam = btn.dataset.teamId;
+      document.getElementById('sim-team').value = simSelectedTeam;
+      var b1 = document.getElementById('sim-btn-t1');
+      var b2 = document.getElementById('sim-btn-t2');
+      if (btn === b1) {
+        b1.className = 'join-item btn btn-primary flex-1 gap-2';
+        b2.className = 'join-item btn btn-outline flex-1 gap-2';
+      } else {
+        b2.className = 'join-item btn btn-primary flex-1 gap-2';
+        b1.className = 'join-item btn btn-outline flex-1 gap-2';
+      }
+      simUpdate();
+    }
+
     function simUpdate() {
       clearTimeout(simTimer);
       simTimer = setTimeout(function() {
-        const teamId = document.querySelector('input[name="sim-team"]:checked').value;
-        const score = document.getElementById('sim-score').value;
-        const death = document.getElementById('sim-death').value;
-        const wickets = document.getElementById('sim-wickets').value;
-        const url = '/api/simulate/{{ match.match_id }}?teamId=' + teamId
+        var score = document.getElementById('sim-score').value;
+        var death = document.getElementById('sim-death').value;
+        var wickets = document.getElementById('sim-wickets').value;
+        var url = '/api/simulate/{{ match.match_id }}?teamId=' + simSelectedTeam
           + '&score=' + score + '&deathRuns=' + death + '&ppWickets=' + wickets;
         htmx.ajax('GET', url, {target: '#sim-result', swap: 'innerHTML', indicator: '#sim-spinner'});
       }, 300);
