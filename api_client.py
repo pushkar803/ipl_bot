@@ -61,6 +61,22 @@ class SpodaAPI:
             cache_key=f"win_prob_{match_id}_{team_id}_{first_innings_score}_{death_over_runs}_{wickets_lost_pp}",
         )
 
+    def simulate_win_probability(self, match_id: int, team_id: int,
+                                 first_innings_score: int,
+                                 death_over_runs: int,
+                                 wickets_lost_pp: int) -> dict:
+        """Like get_win_probability but never caches — for interactive simulator."""
+        return self._get(
+            "/match-winner/win-probability",
+            params={
+                "matchId": match_id,
+                "teamId": team_id,
+                "firstInningsScore": first_innings_score,
+                "deathOverRuns": death_over_runs,
+                "wicketsLostInPowerplay": wickets_lost_pp,
+            },
+        )
+
     # ── Top Batsmen ─────────────────────────────────────────────────
 
     def get_top_batsmen_runs(self, match_id: int, min_runs: int = 20) -> dict:

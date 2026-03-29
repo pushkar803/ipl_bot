@@ -24,7 +24,7 @@
   {% if ai_available is not defined or ai_available %}
   <button
     class="btn btn-ghost btn-xs ml-auto gap-1"
-    hx-post="/api/ai-analysis/{{ match.match_id }}"
+    hx-post="/api/ai-analysis/{{ match_id or match.match_id }}"
     hx-target="#ai-result"
     hx-swap="innerHTML"
     hx-indicator="#ai-regen-spinner"

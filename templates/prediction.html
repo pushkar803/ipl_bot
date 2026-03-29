@@ -294,6 +294,128 @@
 </section>
 {% endif %}
 
+<!-- What-If Simulator -->
+<section class="mb-10 fade-in">
+  <div class="card bg-gradient-to-br from-base-200 to-base-300 shadow-xl">
+    <div class="card-body">
+      <h3 class="card-title text-xl gap-2">
+        <span class="text-2xl">🎯</span>
+        What-If Scenario Simulator
+      </h3>
+      <p class="text-base-content/60 text-sm mb-4">Adjust match conditions and see how win probability changes in real time.</p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- Controls -->
+        <div class="lg:col-span-2 space-y-5">
+
+          <!-- Team Selector -->
+          <div class="form-control">
+            <label class="label"><span class="label-text font-semibold">Who bats first?</span></label>
+            <div class="flex gap-2">
+              <label class="flex-1 cursor-pointer">
+                <input type="radio" name="sim-team" value="{{ match.team_id1 }}" class="peer hidden" id="sim-team1" checked
+                       onchange="simUpdate()">
+                <div class="btn btn-outline btn-block peer-checked:btn-primary peer-checked:text-primary-content gap-2 transition-all">
+                  <div class="team-badge" style="background:{{ match.team1_meta.bg }}; color:{{ match.team1_meta.text }}; width:1.5rem; height:1.5rem; font-size:.6rem;">
+                    {{ match.team1_meta.abbr }}
+                  </div>
+                  {{ match.team_name1 }}
+                </div>
+              </label>
+              <label class="flex-1 cursor-pointer">
+                <input type="radio" name="sim-team" value="{{ match.team_id2 }}" class="peer hidden" id="sim-team2"
+                       onchange="simUpdate()">
+                <div class="btn btn-outline btn-block peer-checked:btn-primary peer-checked:text-primary-content gap-2 transition-all">
+                  <div class="team-badge" style="background:{{ match.team2_meta.bg }}; color:{{ match.team2_meta.text }}; width:1.5rem; height:1.5rem; font-size:.6rem;">
+                    {{ match.team2_meta.abbr }}
+                  </div>
+                  {{ match.team_name2 }}
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- First Innings Score -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text font-semibold">First Innings Score</span>
+              <span class="label-text-alt font-mono text-primary" id="score-val">180</span>
+            </label>
+            <input type="range" id="sim-score" min="100" max="260" value="180" step="5"
+                   class="range range-primary range-sm"
+                   oninput="document.getElementById('score-val').textContent=this.value; simUpdate()">
+            <div class="flex justify-between text-xs text-base-content/40 px-1 mt-1">
+              <span>100</span><span>140</span><span>180</span><span>220</span><span>260</span>
+            </div>
+          </div>
+
+          <!-- Death Over Runs -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text font-semibold">Death Over Runs (Overs 16-20)</span>
+              <span class="label-text-alt font-mono text-secondary" id="death-val">50</span>
+            </label>
+            <input type="range" id="sim-death" min="15" max="100" value="50" step="5"
+                   class="range range-secondary range-sm"
+                   oninput="document.getElementById('death-val').textContent=this.value; simUpdate()">
+            <div class="flex justify-between text-xs text-base-content/40 px-1 mt-1">
+              <span>15</span><span>35</span><span>55</span><span>75</span><span>100</span>
+            </div>
+          </div>
+
+          <!-- Wickets in Powerplay -->
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text font-semibold">Wickets Lost in Powerplay</span>
+              <span class="label-text-alt font-mono text-accent" id="wick-val">1</span>
+            </label>
+            <input type="range" id="sim-wickets" min="0" max="5" value="1" step="1"
+                   class="range range-accent range-sm"
+                   oninput="document.getElementById('wick-val').textContent=this.value; simUpdate()">
+            <div class="flex justify-between text-xs text-base-content/40 px-1 mt-1">
+              <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result Panel -->
+        <div class="flex flex-col items-center justify-center bg-base-300/50 rounded-box p-6 min-h-[12rem] relative">
+          <div id="sim-result">
+            <div class="flex flex-col items-center gap-3">
+              <div class="radial-progress text-base-content/20 text-2xl font-black"
+                   style="--value:0; --size:7rem; --thickness:6px;" role="progressbar">
+                —
+              </div>
+              <p class="text-xs text-base-content/40">Adjust sliders to simulate</p>
+            </div>
+          </div>
+          <div id="sim-spinner" class="htmx-indicator absolute inset-0 flex items-center justify-center bg-base-300/80 rounded-box">
+            <span class="loading loading-ring loading-lg text-primary"></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let simTimer = null;
+    function simUpdate() {
+      clearTimeout(simTimer);
+      simTimer = setTimeout(function() {
+        const teamId = document.querySelector('input[name="sim-team"]:checked').value;
+        const score = document.getElementById('sim-score').value;
+        const death = document.getElementById('sim-death').value;
+        const wickets = document.getElementById('sim-wickets').value;
+        const url = '/api/simulate/{{ match.match_id }}?teamId=' + teamId
+          + '&score=' + score + '&deathRuns=' + death + '&ppWickets=' + wickets;
+        htmx.ajax('GET', url, {target: '#sim-result', swap: 'innerHTML', indicator: '#sim-spinner'});
+      }, 300);
+    }
+  </script>
+</section>
+
 <!-- AI Analysis -->
 <section class="mb-10 fade-in">
   <div class="card bg-gradient-to-br from-base-200 to-base-300 shadow-xl">

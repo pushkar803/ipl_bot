@@ -4,7 +4,7 @@
 import markdown
 import requests as req_lib
 
-from flask import Flask, render_template, redirect, url_for, jsonify
+from flask import Flask, render_template, redirect, url_for, jsonify, request
 
 import db
 from config import OPENAI_API_KEY, SPODA_AUTH_COOKIE, BASE_URL, HEADERS, COOKIES, SECRET_KEY, FLASK_DEBUG
@@ -259,7 +259,7 @@ def ai_analysis(match_id: int):
     analysis_md = get_ai_analysis(full)
     db.save_ai_analysis(match_id, analysis_md)
     sections = _parse_ai_sections(analysis_md)
-    return render_template("partials/ai_analysis.html", sections=sections)
+    return render_template("partials/ai_analysis.html", sections=sections, match_id=match_id)
 
 
 SECTION_META = {
@@ -396,6 +396,35 @@ def _extract_boundary_pct(team_analysis):
             results.append({"team": team, "fours": fours, "sixes": sixes})
         return results
     return []
+
+
+@app.route("/api/simulate/<int:match_id>")
+def simulate(match_id: int):
+    try:
+        team_id = int(request.args.get("teamId", 0))
+        score = int(request.args.get("score", 180))
+        death_runs = int(request.args.get("deathRuns", 50))
+        pp_wickets = int(request.args.get("ppWickets", 1))
+    except (ValueError, TypeError):
+        return jsonify({"error": "Invalid parameters"}), 400
+
+    if not team_id:
+        return jsonify({"error": "teamId required"}), 400
+
+    try:
+        result = api.simulate_win_probability(
+            match_id, team_id, score, death_runs, pp_wickets
+        )
+        prob = result.get("probability", 0)
+        return render_template(
+            "partials/sim_result.html",
+            prob=prob,
+            score=score,
+            death_runs=death_runs,
+            pp_wickets=pp_wickets,
+        )
+    except Exception as e:
+        return f'<p class="text-error text-sm">Simulation failed: {e}</p>'
 
 
 @app.route("/api/recheck-spoda", methods=["POST"])

@@ -1,0 +1,13 @@
+{% set pct = (prob * 100)|round(1) %}
+{% set other = (100 - pct)|round(1) %}
+
+<div class="flex flex-col items-center gap-3 fade-in">
+  <div class="radial-progress text-success text-2xl font-black"
+       style="--value:{{ pct|int }}; --size:7rem; --thickness:6px;"
+       role="progressbar">
+    {{ pct }}%
+  </div>
+  <div class="text-xs text-base-content/50 text-center">
+    Score {{ score }} &middot; Death {{ death_runs }} runs &middot; PP {{ pp_wickets }}w
+  </div>
+</div>
