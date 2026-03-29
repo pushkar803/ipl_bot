@@ -208,6 +208,9 @@ def predict(match_id: int):
     ground_batting = _extract_ground_batting(full.get("team_analysis"))
     boundary_pct = _extract_boundary_pct(full.get("team_analysis"))
 
+    cached_md = db.get_ai_analysis_cached(match_id)
+    cached_sections = _parse_ai_sections(cached_md) if cached_md else []
+
     return render_template(
         "prediction.html",
         match=match,
@@ -224,6 +227,7 @@ def predict(match_id: int):
         ground_batting=ground_batting,
         boundary_pct=boundary_pct,
         ai_available=bool(OPENAI_API_KEY),
+        cached_sections=cached_sections,
     )
 
 
@@ -253,6 +257,7 @@ def ai_analysis(match_id: int):
     })
 
     analysis_md = get_ai_analysis(full)
+    db.save_ai_analysis(match_id, analysis_md)
     sections = _parse_ai_sections(analysis_md)
     return render_template("partials/ai_analysis.html", sections=sections)
 

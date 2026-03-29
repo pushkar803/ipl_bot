@@ -304,7 +304,9 @@
       </h3>
 
       <div id="ai-result">
-        {% if ai_available %}
+        {% if cached_sections %}
+        {% include "partials/ai_analysis.html" with context %}
+        {% elif ai_available %}
         <p class="text-base-content/60 mb-4">Get a comprehensive AI analysis including match winner prediction, key factors, and player picks.</p>
         <button
           class="btn btn-success gap-2"

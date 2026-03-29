@@ -15,6 +15,12 @@ def init_db():
                 fetched_at  REAL NOT NULL
             );
 
+            CREATE TABLE IF NOT EXISTS ai_analysis (
+                match_id    INTEGER PRIMARY KEY,
+                markdown    TEXT NOT NULL,
+                created_at  REAL NOT NULL
+            );
+
             CREATE TABLE IF NOT EXISTS matches (
                 match_id     INTEGER PRIMARY KEY,
                 series_id    INTEGER,
@@ -94,7 +100,30 @@ def get_matches_by_day(day_type: str, fetched_date: str) -> list[dict]:
     return [dict(r) for r in rows]
 
 
+def save_ai_analysis(match_id: int, markdown_text: str):
+    with _conn() as conn:
+        conn.execute(
+            "INSERT OR REPLACE INTO ai_analysis (match_id, markdown, created_at) VALUES (?, ?, ?)",
+            (match_id, markdown_text, time.time()),
+        )
+
+
+def get_ai_analysis_cached(match_id: int) -> str | None:
+    with _conn() as conn:
+        row = conn.execute(
+            "SELECT markdown, created_at FROM ai_analysis WHERE match_id = ?",
+            (match_id,),
+        ).fetchone()
+    if row is None:
+        return None
+    age_hours = (time.time() - row["created_at"]) / 3600
+    if age_hours > CACHE_TTL_HOURS:
+        return None
+    return row["markdown"]
+
+
 def clear_old_cache():
     cutoff = time.time() - (CACHE_TTL_HOURS * 3600)
     with _conn() as conn:
         conn.execute("DELETE FROM api_cache WHERE fetched_at < ?", (cutoff,))
+        conn.execute("DELETE FROM ai_analysis WHERE created_at < ?", (cutoff,))

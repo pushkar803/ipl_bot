@@ -1,5 +1,5 @@
 <div class="space-y-4 fade-in">
-  {% for s in sections %}
+  {% for s in (sections or cached_sections) %}
   <div class="card bg-base-300/50 border-l-4 {{ s.border }} shadow-sm hover:shadow-md transition-shadow">
     <div class="card-body p-5">
       <div class="flex items-center gap-2 mb-2">
@@ -21,4 +21,17 @@
     Analysis complete
   </div>
   <span class="text-xs text-base-content/40">Powered by GPT-4o-mini</span>
+  {% if ai_available is not defined or ai_available %}
+  <button
+    class="btn btn-ghost btn-xs ml-auto gap-1"
+    hx-post="/api/ai-analysis/{{ match.match_id }}"
+    hx-target="#ai-result"
+    hx-swap="innerHTML"
+    hx-indicator="#ai-regen-spinner"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+    Regenerate
+  </button>
+  <span id="ai-regen-spinner" class="loading loading-spinner loading-xs htmx-indicator"></span>
+  {% endif %}
 </div>
